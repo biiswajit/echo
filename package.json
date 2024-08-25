@@ -1,0 +1,22 @@
+{
+  "name": "echo",
+  "private": true,
+  "scripts": {
+    "docker:up": "sudo docker-compose -f docker/docker-compose.yml up -d --build --remove-orphans",
+    "docker:stop": "sudo docker-compose -f docker/docker-compose.yml stop",
+    "docker:down": "sudo docker-compose -f docker/docker-compose.yml down",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.14",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "engines": {
+    "node": ">=18"
+  }
+}

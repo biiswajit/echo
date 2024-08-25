@@ -1,0 +1,12 @@
+{
+  "extends": "@echo/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "./src/",
+    "paths": {
+      "@/icons/*": ["icons/*"],
+    },
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  # database service of echo
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: no
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust # for local development, do not need password
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/
+  # caching service of echo
+  redis:
+    image: redis/redis-stack
+    ports:
+      - "6379:6379"
+      - "8001:8001"
+    restart: no
+  # aws service of echo for local development
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566" # for localstack gateway
+      - "4510-4559:4510-4559" # for external services
+    environment:
+      SERVICES: s3 # currently i need s3 service only
+      DEBUG: 1
+    volumes:
+      - ./localstack:/var/lib/localstack
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    depends_on:
+      - postgres
+
+volumes:
+  pgdata:
+    driver: local # using local driver for persistence of db data
