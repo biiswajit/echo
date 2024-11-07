@@ -1,81 +1,67 @@
-# Turborepo starter
+<p align="center">
+  <img  src="https://github.com/user-attachments/assets/d71b83f7-5a27-492d-a764-5d70516d9af9" data-canonical-src="https://github.com/user-attachments/assets/d71b83f7-5a27-492d-a764-5d70516d9af9" width="400" />
+</p>
 
-This is an official starter Turborepo.
+<div align="center">
+<h1 align="center">
+  Your voice, your domain, your community
+</h1>
 
-## Using this example
+[Instagram](https://instagram.com/biswajitmalakarmeta) | [Website](https://linktr.ee/biiswajit) | [X](https://x.com/biswajittwt) | [LinkedIn](https://www.linkedin.com/in/biswajitin/)
+</div>
 
-Run the following command:
+Our platform connects writers, readers, and communities with robust tools for creating, publishing, and engaging. Writers can publish on custom domains, optimize for SEO, track advanced stats, and monetize content. Pro features include branded profiles, enhanced analytics, and collaborative options—making it a versatile space for creators and developers alike.
 
-```sh
-npx create-turbo@latest
-```
+## Application Feature Plan
 
-## What's inside?
+### Core Features
 
-This Turborepo includes the following packages/apps:
+> First deployment scheduled on end of November'24
 
-### Apps and Packages
+- **Editor**: Intuitive editor to create and edit blogs with rich text formatting options.
+- **Publish Blogs**: Seamless publishing flow to make blogs live instantly.
+- **Blog Display**: Clean, reader-friendly design to showcase published blogs.
+- **SEO Optimization**: In-built SEO tools to help blogs rank better on search engines.
+- **Stats**: Comprehensive analytics to track views, engagements, and user interactions.
+- **Authentication**: Secure login and registration system for users.
+- **Notification**: Real-time notifications for updates, engagement, and platform activities.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+---
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Enhanced Capabilities
+- **Custom Domain Mapping**: Allow users to connect their own domain to their profile or blog page.
+- **Community Engagement**: Enable community features like comments, upvotes, and content sharing.
+- **User Profiles and Followers**: Personalized profiles with the ability to follow other users and build a following.
 
-### Utilities
+---
 
-This Turborepo has some additional tools already setup for you:
+### Content & Collaboration
+- **Series and Collections**: Organize content into series or collections for better categorization and storytelling.
+- **Collaborative Writing**: Allow multiple users to co-author and edit blogs in real-time.
+- **Monetization Options**: Support various revenue models for creators, such as subscriptions or ad revenue.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+---
 
-### Build
+### Content Discovery
+- **Content Recommendation**: AI-powered recommendations to display personalized blog suggestions to users.
 
-To build all apps and packages, run the following command:
+---
 
-```
-cd my-turborepo
-pnpm build
-```
+### Customization
+- **Theme**: Customizable themes for users to personalize the appearance of their profiles and blogs.
 
-### Develop
+---
 
-To develop all apps and packages, run the following command:
+### Integrations
+- **Integration with External Tools**: Connect with popular external tools for enhanced productivity and tracking.
+- **Enhanced Stats**: Advanced analytics with insights into traffic sources, user behavior, and content performance.
 
-```
-cd my-turborepo
-pnpm dev
-```
+---
 
-### Remote Caching
+### Developer-Friendly
+- **API Access for Developers**: API access to allow developers to build integrations and third-party applications.
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+---
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+### Pro User Features
+- **Custom Branding**: Exclusive branding options for pro users, enabling unique customization for a premium look.
