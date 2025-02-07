@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, AsyncGenerator
 
 class Model(ABC):
     @abstractmethod
