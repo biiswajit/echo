@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Optional, Dict, Any, AsyncGenerator
+from typing import Optional, Dict, Generator, Any, List
 
 class Model(ABC):
     @abstractmethod
@@ -10,7 +10,7 @@ class Model(ABC):
     def generate_title(
         self,
         prompt: str,
-        model_params: Optional[Dict[str, Any]] = None
+        model_params: Optional[List[Dict[str, Any]]] = None
     ) -> str:
         """
         Based on the first prompt get the title for the new discussion.
@@ -28,9 +28,9 @@ class Model(ABC):
     def generate_response(
         self,
         prompt: str,
-        conversation_history: Optional[list] = None,
-        model_params: Optional[Dict[str, Any]] = None
-    ) -> str:
+        conversation_history: Optional[List[Dict[str, str]]] = None,
+        model_params: Optional[List[Dict[str, Any]]] = None
+    ) -> Generator[str, None, str]:
         """
         Generate a new response for the given prompt.
 
@@ -49,8 +49,8 @@ class Model(ABC):
         self,
         selected_text: str,
         additional_prompt: Optional[str] = None,
-        conversation_history: Optional[list] = None,
-        model_params: Optional[Dict[str, Any]] = None
+        conversation_history: Optional[List[Dict[str, str]]] = None,
+        model_params: Optional[List[Dict[str, Any]]] = None
     ) -> str:
         """
         Generates a response explaining or expanding on the selected text from a previous response.
