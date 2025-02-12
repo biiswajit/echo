@@ -1,13 +1,11 @@
-from src.models.base import Model
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
 from typing import Optional, Dict, Generator, Any, List
-from src.prompts.title import TITLE_SYSTEM_PROMPT
 import os
-from src.prompts.response import RESPONSE_SYSTEM_PROMPT
-from src.functions.history_formatter import format_history
-from src.functions.inline_editor import inline_editor
+from src.lib.models import Model
+from src.lib.prompts import TITLE_SYSTEM_PROMPT, RESPONSE_SYSTEM_PROMPT
+from src.lib.functions import format_history, inline_editor
 
 load_dotenv() # load the environment variables from the .env file
 
