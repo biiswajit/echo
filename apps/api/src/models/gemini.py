@@ -7,6 +7,7 @@ from src.prompts.title import TITLE_SYSTEM_PROMPT
 import os
 from src.prompts.response import RESPONSE_SYSTEM_PROMPT
 from src.functions.history_formatter import format_history
+from src.functions.inline_editor import inline_editor
 
 load_dotenv() # load the environment variables from the .env file
 
@@ -62,8 +63,26 @@ class Gemini(Model):
     def reply_to_selection(
         self, 
         selected_text: str, 
-        additional_prompt: str = None, 
+        additional_prompt: Optional[str] = None,
         conversation_history: Optional[List[Dict[str, str]]] = None, 
         model_params: Optional[List[Dict[str, Any]]] = None
-    ) -> str:
-        return ""
+    ) -> Generator[str, None, str]:
+        prompt = ""
+        if conversation_history:
+            prompt = format_history(conversation_history) + inline_editor(selected_text, additional_prompt)
+        else:
+            prompt = inline_editor(selected_text, additional_prompt)
+        try:
+            response = self.client.models.generate_content_stream(
+                model="gemini-2.0-flash",
+                config=types.GenerateContentConfig(system_instruction=RESPONSE_SYSTEM_PROMPT),
+                content=[prompt]
+            )
+            full_response = ""
+            for chunk in response:
+                full_response += chunk.text
+                yield chunk.text
+            return full_response
+        except Exception as e:
+            print(f"an error raised while generating response (model - gemini). here is more info. {str(e)}")
+            return ""
