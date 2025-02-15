@@ -1,10 +1,21 @@
 import os
 from fastapi import FastAPI
 from dotenv import load_dotenv
-from src.models.gemini import Gemini
+from .lib.models import Gemini
 from typing import Dict
 
 load_dotenv() # load environment variables from .env
+
+"""
+API Endpoints:
+GET /discussion/all(limit&offset)
+UPDATE /discussion/rename??discussionId=
+DELETE /discussion/delete??discussionId=
+POST /discussion/new
+GET /chat/all??discussionId=
+POST /chat/init
+POST /chat/new
+"""
 
 app = FastAPI()
 

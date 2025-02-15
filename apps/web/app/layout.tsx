@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import { Inter, JetbrainsMono, Nunito } from "@/styles/font";
+import { Inter, JetbrainsMono, Nunito, Resonate } from "@/styles/font";
 
 export const metadata: Metadata = {
   title: "Echo",
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${Inter.variable} ${JetbrainsMono.variable} ${Nunito.variable}`}
+        className={`${Inter.variable} ${JetbrainsMono.variable} ${Nunito.variable} ${Resonate.variable}`}
       >
         {children}
       </body>

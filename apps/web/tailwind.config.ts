@@ -11,7 +11,7 @@ export default {
     extend: {
       fontFamily: {
         code: ["var(--font-jetbrains-mono)"],
-        heading: ["var(--font-nunito)"],
+        heading: ["var(--font-resonate)", "var(--font-nunito)"],
         body: ["var(--font-inter)"],
       },
       colors: {

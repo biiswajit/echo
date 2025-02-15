@@ -44,3 +44,70 @@ export const Nunito = localFont({
   variable: "--font-nunito",
   display: "swap",
 });
+
+export const Resonate = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Resonate-ExtraBold.ttf",
+      style: "normal",
+      weight: "800",
+    },
+    {
+      path: "../../public/fonts/Resonate-ExtraBoldOblique.ttf",
+      style: "italic",
+      weight: "800",
+    },
+    {
+      path: "../../public/fonts/Resonate-Bold.ttf",
+      style: "normal",
+      weight: "700",
+    },
+    {
+      path: "../../public/fonts/Resonate-BoldOblique.ttf",
+      style: "italic",
+      weight: "700",
+    },
+    {
+      path: "../../public/fonts/Resonate-SemiBold.ttf",
+      style: "normal",
+      weight: "600",
+    },
+    {
+      path: "../../public/fonts/Resonate-SemiBoldOblique.ttf",
+      style: "italic",
+      weight: "600",
+    },
+    {
+      path: "../../public/fonts/Resonate-Medium.ttf",
+      style: "normal",
+      weight: "500",
+    },
+    {
+      path: "../../public/fonts/Resonate-MediumOblique.ttf",
+      style: "italic",
+      weight: "500",
+    },
+    {
+      path: "../../public/fonts/Resonate-Regular.ttf",
+      style: "normal",
+      weight: "400",
+    },
+    {
+      path: "../../public/fonts/Resonate-Oblique.ttf",
+      style: "italic",
+      weight: "400",
+    },
+    {
+      path: "../../public/fonts/Resonate-Light.ttf",
+      style: "normal",
+      weight: "200",
+    },
+    {
+      path: "../../public/fonts/Resonate-LightOblique.ttf",
+      style: "italic",
+      weight: "200",
+    }
+  ],
+  variable: "--font-resonate",
+  display: "swap",
+});

@@ -3,9 +3,9 @@ from google.genai import types
 from dotenv import load_dotenv
 from typing import Optional, Dict, Generator, Any, List
 import os
-from src.lib.models import Model
-from src.lib.prompts import TITLE_SYSTEM_PROMPT, RESPONSE_SYSTEM_PROMPT
-from src.lib.functions import format_history, inline_editor
+from ..models import Model
+from ..prompts import TITLE_SYSTEM_PROMPT, RESPONSE_SYSTEM_PROMPT
+from ..functions import format_history, inline_editor
 
 load_dotenv() # load the environment variables from the .env file
 
