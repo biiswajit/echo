@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "poetry run uvicorn src.main:app --port 8080 --reload "
+    "dev": "poetry run uvicorn src.main:router --port 8080 --reload "
   }
 }
