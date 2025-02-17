@@ -11,6 +11,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@echo/utils": "workspace:*",
     "@echo/zod": "workspace:*",
     "@echo/database": "workspace:*",
     "@echo/ui": "workspace:*",

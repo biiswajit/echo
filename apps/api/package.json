@@ -12,6 +12,7 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
+    "@echo/utils": "workspace:*",
     "@echo/zod": "workspace:*",
     "@echo/database": "workspace:*"
   },
