@@ -1,1 +1,19 @@
+model Model {
+    id        String   @id @default(cuid())
+    name      String
+    createdAt DateTime @default(now())
+    version   String?
 
+    companyId String?
+    company   Company? @relation(fields: [companyId], references: [id])
+
+    Message Message[]
+}
+
+model Company {
+    id        String   @id @default(cuid())
+    name      String
+    createdAt DateTime @default(now())
+
+    models Model[]
+}

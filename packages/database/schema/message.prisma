@@ -1,0 +1,17 @@
+enum Author {
+    USER
+    ASSISTANT
+}
+
+model Message {
+    id        String   @id @default(cuid())
+    author    Author
+    content   String?
+    createdAt DateTime @default(now())
+
+    modelId String?
+    model   Model?  @relation(fields: [modelId], references: [id])
+
+    conversationId String?
+    Conversation   Conversation? @relation(fields: [conversationId], references: [id])
+}
