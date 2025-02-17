@@ -15,5 +15,8 @@
     "@echo/typescript-config": "workspace:*",
     "@types/node": "^22.13.4",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@echo/database": "workspace:*"
   }
 }
