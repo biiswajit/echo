@@ -1,13 +1,13 @@
 {
-  "name": "mapper",
+  "name": "@echo/zod",
   "version": "0.1.0",
   "private": true,
-  "description": "This is the mapper service for the application echo.",
-  "main": "./dist/index.js",
+  "description": "This package contains shared zod schemas and types",
+  "main": "index.ts",
   "keywords": [
-    "mapper",
-    "service",
-    "backend"
+    "zod",
+    "schema",
+    "types"
   ],
   "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
   "license": "ISC",
@@ -17,7 +17,10 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
-    "@echo/zod": "workspace:*",
-    "@echo/database": "workspace:*"
+    "zod": "^3.24.2"
+  },
+  "exports": {
+    "./type": "./src/type/index.ts",
+    "./schema": "./src/schema/index.ts"
   }
 }
