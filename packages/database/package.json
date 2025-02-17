@@ -4,8 +4,8 @@
   "description": "This is a database package",
   "main": "index.ts",
   "scripts": {
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev --skip-generate",
+    "db:generate": "prisma generate --schema ./schema",
+    "db:migrate": "prisma migrate dev --schema ./schema --skip-generate",
     "db:deploy": "prisma migrate deploy"
   },
   "keywords": [
