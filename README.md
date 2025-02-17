@@ -1,7 +1,7 @@
 <div align="center">
 
 <picture>
-  <img alt="logo" src="https://github.com/user-attachments/assets/4c756e86-a44b-4475-92d0-e5e14776180e">
+  <img alt="logo" src="https://github.com/user-attachments/assets/43fc82dc-1039-4fe7-aff1-9600f07a5cdc">
 </picture>
 
 <h3>Open Source GPT Mapper</h3>
