@@ -18,56 +18,6 @@ importers:
         specifier: 5.7.3
         version: 5.7.3
 
-  apps/api:
-    dependencies:
-      '@echo/database':
-        specifier: workspace:*
-        version: link:../../packages/database
-      '@echo/utils':
-        specifier: workspace:*
-        version: link:../../packages/utils
-      '@echo/zod':
-        specifier: workspace:*
-        version: link:../../packages/zod
-    devDependencies:
-      '@echo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
-      '@types/express':
-        specifier: ^5.0.0
-        version: 5.0.0
-      '@types/node':
-        specifier: ^22.13.4
-        version: 22.13.4
-      express:
-        specifier: ^4.21.2
-        version: 4.21.2
-      typescript:
-        specifier: ^5.7.3
-        version: 5.7.3
-
-  apps/mapper:
-    dependencies:
-      '@echo/database':
-        specifier: workspace:*
-        version: link:../../packages/database
-      '@echo/utils':
-        specifier: workspace:*
-        version: link:../../packages/utils
-      '@echo/zod':
-        specifier: workspace:*
-        version: link:../../packages/zod
-    devDependencies:
-      '@echo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
-      '@types/node':
-        specifier: ^22.13.4
-        version: 22.13.4
-      typescript:
-        specifier: ^5.7.3
-        version: 5.7.3
-
   apps/web:
     dependencies:
       '@echo/database':
@@ -121,6 +71,34 @@ importers:
         version: 9.20.0(jiti@2.4.2)
       typescript:
         specifier: 5.7.3
+        version: 5.7.3
+
+  apps/worker:
+    dependencies:
+      '@echo/database':
+        specifier: workspace:*
+        version: link:../../packages/database
+      '@echo/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
+      '@echo/zod':
+        specifier: workspace:*
+        version: link:../../packages/zod
+      express:
+        specifier: ^4.21.2
+        version: 4.21.2
+    devDependencies:
+      '@echo/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+      '@types/express':
+        specifier: ^5.0.0
+        version: 5.0.0
+      '@types/node':
+        specifier: ^22.13.4
+        version: 22.13.4
+      typescript:
+        specifier: ^5.7.3
         version: 5.7.3
 
   packages/database:
@@ -244,6 +222,9 @@ importers:
       '@echo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
+      '@echo/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@types/node':
         specifier: ^22.13.4
         version: 22.13.4

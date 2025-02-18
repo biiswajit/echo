@@ -1,29 +1,26 @@
 {
-  "name": "api",
+  "name": "worker",
   "version": "0.1.0",
-  "private": true,
-  "description": "This is the primary API for the application echo.",
+  "description": "This is simple worker application written in nodejs using express to offload the main application",
   "main": "./dist/index.js",
   "scripts": {
     "dev": "pnpm tsc -b && node dist/index.js"
   },
+  "keywords": [
+    "worker"
+  ],
+  "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
+  "license": "ISC",
   "devDependencies": {
     "@echo/typescript-config": "workspace:*",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.4",
-    "express": "^4.21.2",
     "typescript": "^5.7.3"
   },
   "dependencies": {
     "@echo/utils": "workspace:*",
+    "@echo/database": "workspace:*",
     "@echo/zod": "workspace:*",
-    "@echo/database": "workspace:*"
-  },
-  "keywords": [
-    "api",
-    "express",
-    "backend"
-  ],
-  "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
-  "license": "ISC"
+    "express": "^4.21.2"
+  }
 }

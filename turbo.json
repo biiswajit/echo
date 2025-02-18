@@ -35,17 +35,11 @@
     },
     "web": {
       "dependsOn": [
-        "api",
-        "mapper",
+        "worker",
         "@echo/ui"
       ]
     },
-    "api": {},
-    "mapper": {
-      "dependsOn": [
-        "api"
-      ]
-    },
+    "worker": {},
     "db:generate": {
       "cache": false
     },
