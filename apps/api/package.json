@@ -4,6 +4,9 @@
   "private": true,
   "description": "This is the primary API for the application echo.",
   "main": "./dist/index.js",
+  "scripts": {
+    "dev": "pnpm tsc -b && node dist/index.js"
+  },
   "devDependencies": {
     "@echo/typescript-config": "workspace:*",
     "@types/express": "^5.0.0",
