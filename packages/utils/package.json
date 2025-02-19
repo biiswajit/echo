@@ -20,6 +20,6 @@
   },
   "exports": {
     ".": "./src/index.ts",
-    "./constants": "./src/constants/index.ts"
+    "./prompts": "./src/prompts/index.ts"
   }
 }
