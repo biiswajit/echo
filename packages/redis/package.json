@@ -1,15 +1,16 @@
 {
-  "name": "@echo/utils",
+  "name": "@echo/redis",
   "version": "0.1.0",
-  "description": "Shared utility functions",
+  "description": "Redis related implementations for all applications",
   "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "exports": {
+    ".": "./src/index.ts"
   },
   "keywords": [
-    "echo",
-    "utils",
-    "functions"
+    "redis",
+    "cache",
+    "queue",
+    "pub-sub"
   ],
   "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
   "license": "ISC",
@@ -18,8 +19,7 @@
     "@types/node": "^22.13.4",
     "typescript": "^5.7.3"
   },
-  "exports": {
-    ".": "./src/index.ts",
-    "./prompts": "./src/prompts/index.ts"
+  "dependencies": {
+    "redis": "^4.7.0"
   }
 }
