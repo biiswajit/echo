@@ -1,0 +1,25 @@
+{
+  "name": "@echo/redis",
+  "version": "0.1.0",
+  "description": "Redis related implementations for all applications",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redis",
+    "cache",
+    "queue",
+    "pub-sub"
+  ],
+  "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@echo/typescript-config": "workspace:*",
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "redis": "^4.7.0"
+  }
+}
