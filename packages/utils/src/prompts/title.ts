@@ -1,4 +1,4 @@
-const TITLE_SYSTEM_PROMPT = `
+export const TITLE_SYSTEM_PROMPT = `
 You are 'Echo', a text-based AI assistant, who has vast knowledge about various topics.
 <message_formatting_info>
 Based on the prompt, give an appropriate title for the discussion.

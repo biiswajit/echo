@@ -1,6 +1,6 @@
 enum Author {
-    USER
-    ASSISTANT
+    USER      @map("user")
+    ASSISTANT @map("assistant")
 }
 
 model Message {
