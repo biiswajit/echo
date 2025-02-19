@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "Redis related implementations for all applications",
   "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "exports": {
+    ".": "./src/index.ts"
   },
   "keywords": [
     "redis",
