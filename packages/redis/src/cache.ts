@@ -21,17 +21,28 @@ export class Cache {
     }
 
     async read(conversationId: string): Promise<conversationHistoryType[]> {
-        // TODO: implement this function
-        return []
+        const res = await this.client.lRange(`conversation:${conversationId}`, 0, -1);
+        return res.map((item) => JSON.parse(item));
     }
 
-    async write(conversationId: string, payload: conversationHistoryType): Promise<boolean> {
-        // TODO: implement this function
+    async write(conversationId: string, payload: conversationHistoryType[]): Promise<boolean> {
+        const multi = this.client.multi();
+        for (const item of payload) {
+            multi.rPush(`conversation:${conversationId}`, JSON.stringify(item));
+        }
+
+        const res = await multi.exec();
+        if (!res) return false;
         return true;
     }
 
     async delete(conversationId: string): Promise<boolean> {
-        // TODO: implement this function
+        const res = await this.client.del(`conversation:${conversationId}`);
+        if (res <= 0) return false;
         return true;
+    }
+
+    async disconnect(): Promise<void> {
+        await this.client.disconnect();
     }
 }
