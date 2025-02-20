@@ -20,7 +20,7 @@
     "@echo/database": "workspace:*",
     "@echo/redis": "workspace:*",
     "@echo/utils": "workspace:*",
-    "@echo/zod": "workspace:*",
+    "@echo/types": "workspace:*",
     "@google/generative-ai": "^0.21.0"
   }
 }

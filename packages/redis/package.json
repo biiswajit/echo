@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "redis": "^4.7.0",
-    "@echo/zod": "workspace:*"
+    "@echo/types": "workspace:*"
   }
 }

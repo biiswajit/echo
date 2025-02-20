@@ -13,7 +13,7 @@
   "dependencies": {
     "@echo/redis": "workspace:*",
     "@echo/utils": "workspace:*",
-    "@echo/zod": "workspace:*",
+    "@echo/types": "workspace:*",
     "@echo/database": "workspace:*",
     "@echo/ui": "workspace:*",
     "@tailwindcss/postcss": "^4.0.6",

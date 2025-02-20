@@ -1,5 +1,5 @@
 import { createClient, RedisClientType } from "redis";
-import { conversationHistoryType } from "@echo/zod/type";
+import { conversationHistoryType } from "@echo/types/typescript";
 
 export class Cache {
     private static instance: Cache;

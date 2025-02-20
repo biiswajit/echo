@@ -1,5 +1,5 @@
 {
-  "name": "@echo/zod",
+  "name": "@echo/types",
   "version": "0.1.0",
   "private": true,
   "description": "This package contains shared zod schemas and types",
@@ -12,6 +12,7 @@
   "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@echo/database": "workspace:*",
     "@echo/utils": "workspace:*",
     "@echo/typescript-config": "workspace:*",
     "@types/node": "^22.13.4",
@@ -21,7 +22,7 @@
     "zod": "^3.24.2"
   },
   "exports": {
-    "./type": "./src/type/index.ts",
-    "./schema": "./src/schema/index.ts"
+    "./typescript": "./src/typescript/index.ts",
+    "./zod": "./src/zod/index.ts"
   }
 }

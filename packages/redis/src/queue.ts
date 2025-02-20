@@ -1,5 +1,5 @@
 import { createClient, RedisClientType } from "redis";
-import { jobPayloadType } from "@echo/zod/type";
+import { jobPayloadType } from "@echo/types/zod";
 
 export class Queue {
     private static instances: Map<string, Queue> = new Map();
