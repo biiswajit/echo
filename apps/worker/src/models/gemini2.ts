@@ -3,7 +3,7 @@ import { Model } from "./base";
 import { TITLE_SYSTEM_PROMPT, RESPONSE_SYSTEM_PROMPT } from "@echo/utils/prompts";
 import { models } from "@echo/utils";
 import { formatHistory, inlineEditor } from "../functions";
-import { conversationHistoryType } from "@echo/zod/type";
+import { conversationHistoryType } from "@echo/types/typescript";
 
 export class Gemini2 extends Model {
     private static instance: Gemini2;
