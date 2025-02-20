@@ -1,4 +1,5 @@
 import { createClient, RedisClientType } from "redis";
+import { jobPayloadType } from "@echo/zod/type";
 
 export class Queue {
     private static instances: Map<string, Queue> = new Map();
@@ -22,13 +23,18 @@ export class Queue {
         return Queue.instances.get(queueName) as Queue;
     }
 
-    async enqueue(): Promise<boolean> {
-        // TODO: implement this function
+    async enqueue(payload: jobPayloadType): Promise<boolean> {
+        // TODO: later for db queue update this function
+        const res = await this.client.rPush(this.queueName, JSON.stringify(payload));
+        if (res <= 0) return false;
         return true;
     }
 
-    async dequeue(): Promise<void> {
-        // TODO: implement this function
+    async dequeue(): Promise<jobPayloadType | null> {
+        // TODO: later for db queue update this function
+        const res = await this.client.blPop(this.queueName, 0); // this will block forever if no elements there
+        if (res) return JSON.parse(res.element);
+        return null;
     }
 
     async disconnect(): Promise<void> {
