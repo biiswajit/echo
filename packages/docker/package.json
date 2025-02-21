@@ -1,0 +1,16 @@
+{
+  "name": "@echo/docker",
+  "version": "0.1.0",
+  "description": "Docker compose folder for development purpose",
+  "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "dev": "sudo docker compose up",
+    "docker:stop": "sudo docker compose down"
+  },
+  "keywords": [
+    "docker",
+    "postgresql",
+    "redis"
+  ]
+}

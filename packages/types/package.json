@@ -3,14 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "description": "This package contains shared zod schemas and types",
-  "main": "index.ts",
-  "keywords": [
-    "zod",
-    "schema",
-    "types"
-  ],
   "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
   "license": "ISC",
+  "scripts": {
+    "build": "pnpm tsc",
+    "check-types": "tsc --noEmit",
+    "dev": "pnpm tsc --watch"
+  },
+  "exports": {
+    "./typescript": {
+      "types": "./src/typescript/index.ts",
+      "default": "./dist/typescript/index.js"
+    },
+    "./zod": {
+      "types": "./src/zod/index.ts",
+      "default": "./dist/zod/index.js"
+    }
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
   "devDependencies": {
     "@echo/database": "workspace:*",
     "@echo/utils": "workspace:*",
@@ -18,11 +30,9 @@
     "@types/node": "^22.13.4",
     "typescript": "^5.7.3"
   },
-  "dependencies": {
-    "zod": "^3.24.2"
-  },
-  "exports": {
-    "./typescript": "./src/typescript/index.ts",
-    "./zod": "./src/zod/index.ts"
-  }
+  "keywords": [
+    "zod",
+    "schema",
+    "types"
+  ]
 }

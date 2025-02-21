@@ -3,18 +3,11 @@
   "version": "0.1.0",
   "description": "This is simple worker application written in nodejs using express to offload the main application",
   "main": "./dist/index.js",
-  "scripts": {
-    "dev": "pnpm tsc -b && node dist/index.js"
-  },
-  "keywords": [
-    "worker"
-  ],
   "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
   "license": "ISC",
-  "devDependencies": {
-    "@echo/typescript-config": "workspace:*",
-    "@types/node": "^22.13.4",
-    "typescript": "^5.7.3"
+  "scripts": {
+    "dev": "pnpm tsc --watch",
+    "build": "pnpm tsc"
   },
   "dependencies": {
     "@echo/database": "workspace:*",
@@ -22,5 +15,13 @@
     "@echo/utils": "workspace:*",
     "@echo/types": "workspace:*",
     "@google/generative-ai": "^0.21.0"
-  }
+  },
+  "devDependencies": {
+    "@echo/typescript-config": "workspace:*",
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  },
+  "keywords": [
+    "worker"
+  ]
 }

@@ -3,23 +3,31 @@
   "version": "0.1.0",
   "description": "Shared utility functions",
   "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "echo",
-    "utils",
-    "functions"
-  ],
   "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
   "license": "ISC",
+  "scripts": {
+    "build": "pnpm tsc",
+    "check-types": "tsc --noEmit",
+    "dev": "pnpm tsc --watch"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./prompts": {
+      "types": "./src/prompts/index.ts",
+      "default": "./dist/prompts/index.js"
+    }
+  },
   "devDependencies": {
     "@echo/typescript-config": "workspace:*",
     "@types/node": "^22.13.4",
     "typescript": "^5.7.3"
   },
-  "exports": {
-    ".": "./src/index.ts",
-    "./prompts": "./src/prompts/index.ts"
-  }
+  "keywords": [
+    "echo",
+    "utils",
+    "functions"
+  ]
 }

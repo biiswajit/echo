@@ -4,8 +4,7 @@
   "tasks": {
     "build": {
       "dependsOn": [
-        "^build",
-        "^db:generate"
+        "^build"
       ],
       "inputs": [
         "$TURBO_DEFAULT$",
@@ -13,7 +12,8 @@
       ],
       "outputs": [
         ".next/**",
-        "!.next/cache/**"
+        "!.next/cache/**",
+        "dist/**"
       ]
     },
     "lint": {
@@ -27,28 +27,8 @@
       ]
     },
     "dev": {
-      "dependsOn": [
-        "^db:generate"
-      ],
       "cache": false,
       "persistent": true
-    },
-    "web": {
-      "dependsOn": [
-        "worker",
-        "@echo/ui"
-      ]
-    },
-    "worker": {},
-    "db:generate": {
-      "cache": false
-    },
-    "db:migrate": {
-      "cache": false,
-      "persistent": true
-    },
-    "db:deploy": {
-      "cache": false
     }
   }
 }
