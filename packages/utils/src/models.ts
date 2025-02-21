@@ -7,6 +7,6 @@
 // export const models: string[] = Array.from(uniqueModels);
 
 export const models: Record<string, string> = {
-    "gemini2": "gemini-2.0-flash",
-    "gemini1": "gemini-1.5-flash"
+    gemini2: "gemini-2.0-flash",
+    gemini1: "gemini-1.5-flash"
 }

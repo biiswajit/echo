@@ -1,4 +1,4 @@
-import { conversationHistoryType } from "@echo/zod/type";
+import { conversationHistoryType } from "@echo/types/typescript";
 
 export abstract class Model {
     /*

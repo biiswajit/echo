@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/lib/functions/historyFormatter.ts","./src/lib/functions/index.ts","./src/lib/functions/inlineEditor.ts","./src/models/base.ts","./src/models/gemini2.ts","./src/models/index.ts"],"version":"5.7.3"}
+{"root":["./src/index.ts","./src/functions/getInstance.ts","./src/functions/getResponse.ts","./src/functions/handleCacheMiss.ts","./src/functions/historyFormatter.ts","./src/functions/index.ts","./src/functions/inlineEditor.ts","./src/models/base.ts","./src/models/gemini2.ts","./src/models/index.ts"],"version":"5.7.3"}

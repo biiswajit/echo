@@ -2,7 +2,7 @@
   "name": "@echo/redis",
   "version": "0.1.0",
   "description": "Redis related implementations for all applications",
-  "main": "index.ts",
+  "main": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts"
   },
