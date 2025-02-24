@@ -14,8 +14,7 @@
     "./styles.css": "./src/styles.css"
   },
   "scripts": {
-    "build": "pnpm tsc",
-    "dev": "pnpm tsc --watch",
+    "build": "rm -R -f ./dist && pnpm tsc",
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit"

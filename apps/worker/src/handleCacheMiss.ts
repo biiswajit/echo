@@ -16,11 +16,12 @@ export async function handleCacheMiss(conversationId: string): Promise<boolean> 
             }
         });
 
-        if (!prismaRes?.messages) throw new Error("no messages found on database!");
+        if (!prismaRes || !prismaRes.messages) return false;
 
         const cache = await Cache.getInstance();
         const success = await cache.write(conversationId, prismaRes.messages);
-        if (!success) throw new Error("unable to write conversations from databse to cache!");
+        if (!success) return false;
+
         return true;
     }
     catch (err) {

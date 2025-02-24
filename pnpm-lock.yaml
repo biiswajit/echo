@@ -123,6 +123,8 @@ importers:
         specifier: ^5.7.3
         version: 5.7.3
 
+  packages/docker: {}
+
   packages/eslint-config:
     devDependencies:
       '@eslint/js':
@@ -190,9 +192,6 @@ importers:
       '@echo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
-      '@echo/utils':
-        specifier: workspace:*
-        version: link:../utils
       '@types/node':
         specifier: ^22.13.4
         version: 22.13.4
@@ -246,7 +245,14 @@ importers:
         version: 5.7.3
 
   packages/utils:
+    dependencies:
+      '@google/generative-ai':
+        specifier: ^0.21.0
+        version: 0.21.0
     devDependencies:
+      '@echo/types':
+        specifier: workspace:*
+        version: link:../types
       '@echo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config

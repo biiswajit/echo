@@ -6,8 +6,8 @@
   "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "dev": "pnpm tsc --watch",
-    "build": "pnpm tsc"
+    "dev": "node --env-file=.env ./dist/index.js",
+    "build": "rm -R -f ./dist && pnpm tsc"
   },
   "dependencies": {
     "@echo/database": "workspace:*",

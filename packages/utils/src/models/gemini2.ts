@@ -1,9 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Model } from "./base";
-import { TITLE_SYSTEM_PROMPT, RESPONSE_SYSTEM_PROMPT } from "@echo/utils/prompts";
-import { models } from "@echo/utils";
+import { TITLE_SYSTEM_PROMPT, RESPONSE_SYSTEM_PROMPT } from "../prompts"
 import { formatHistory, inlineEditor } from "../functions";
-import { conversationHistoryType } from "@echo/types/typescript";
+import { conversationHistoryType, Models } from "@echo/types/typescript";
 
 export class Gemini2 extends Model {
     private static instance: Gemini2;
@@ -34,17 +33,13 @@ export class Gemini2 extends Model {
     ): Promise<string> {
         try {
             const model = this.gemini?.getGenerativeModel({
-                model: models.gemini2 as string,
+                model: Models.GEMINI2,
                 systemInstruction: TITLE_SYSTEM_PROMPT
             });
-            if (!model) {
-                throw new Error("no model created!");
-            }
+            if (!model) throw new Error("no model created!");
 
-            const result = await model?.generateContent(prompt);
-            if (!result) {
-                throw new Error("no title generated!");
-            }
+            const result = await model.generateContent(prompt);
+            if (!result) return "";
 
             return result.response.text();
         }
@@ -60,23 +55,18 @@ export class Gemini2 extends Model {
         conversationHistory?: conversationHistoryType[],
         modelParams?: Record<string, any>[]
     ): Promise<string> {
-        if (conversationHistory) {
+        if (conversationHistory && conversationHistory.length > 0)
             prompt = formatHistory(conversationHistory) + prompt;
-        }
 
         try {
             const model = this.gemini?.getGenerativeModel({
-                model: models.gemini2 as string,
+                model: Models.GEMINI2,
                 systemInstruction: RESPONSE_SYSTEM_PROMPT
             });
-            if (!model) {
-                throw new Error("no model created!");
-            }
+            if (!model) throw new Error("no model created!");
 
             const result = await model.generateContentStream(prompt);
-            if (!result) {
-                throw new Error("no content stream created!");
-            }
+            if (!result) return "";
 
             // TODO: figure out is this the way to send stream message
             let fullResponse = "";
@@ -105,7 +95,7 @@ export class Gemini2 extends Model {
         else prompt = inlineEditor(selectedText, prompt);
 
         try {
-            return await this.generateResponse(prompt, conversationHistory, modelParams);
+            return await this.generateResponse(prompt);
         }
         catch (e) {
             console.error(`error! function- generateTitle(), model- gemini2. more info- ${e}`);

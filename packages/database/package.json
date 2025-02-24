@@ -6,8 +6,7 @@
   "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "build": "pnpm db:generate && pnpm tsc",
-    "dev": "pnpm tsc --watch",
+    "build": "pnpm db:generate && rm -R -f ./dist && pnpm tsc",
     "db:generate": "prisma generate --schema ./schema",
     "db:migrate": "prisma migrate dev --schema ./schema",
     "db:deploy": "prisma migrate deploy",

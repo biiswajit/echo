@@ -20,26 +20,47 @@ export class Cache {
         return Cache.instance;
     }
 
-    async read(conversationId: string): Promise<conversationHistoryType[]> {
-        const res = await this.client.lRange(`conversation:${conversationId}`, 0, -1);
-        return res.map((item) => JSON.parse(item));
+    async read(conversationId: string): Promise<conversationHistoryType[] | null> {
+        try {
+            const res = await this.client.lRange(`conversation:${conversationId}`, 0, -1);
+            if (!res || res.length <= 0) return null;
+            return res.map((item) => JSON.parse(item));
+        }
+        catch (err) {
+            console.error(err);
+            return null;
+        }
     }
 
     async write(conversationId: string, payload: conversationHistoryType[]): Promise<boolean> {
-        const multi = this.client.multi();
-        for (const item of payload) {
-            multi.rPush(`conversation:${conversationId}`, JSON.stringify(item));
-        }
+        try {
+            if (payload.length <= 0) return false;
 
-        const res = await multi.exec();
-        if (!res) return false;
-        return true;
+            const multi = this.client.multi();
+            for (const item of payload) {
+                multi.rPush(`conversation:${conversationId}`, JSON.stringify(item));
+            }
+
+            const res = await multi.exec();
+            if (!res) return false;
+            return true;
+        }
+        catch (err) {
+            console.error(err);
+            return false;
+        }
     }
 
     async delete(conversationId: string): Promise<boolean> {
-        const res = await this.client.del(`conversation:${conversationId}`);
-        if (res <= 0) return false;
-        return true;
+        try {
+            const res = await this.client.del(`conversation:${conversationId}`);
+            if (res <= 0) return false;
+            return true;
+        }
+        catch (err) {
+            console.error(err);
+            return false;
+        }
     }
 
     async disconnect(): Promise<void> {

@@ -6,9 +6,8 @@
   "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
   "license": "ISC",
   "scripts": {
-    "build": "pnpm tsc",
-    "check-types": "tsc --noEmit",
-    "dev": "pnpm tsc --watch"
+    "build": "rm -R -f ./dist && pnpm tsc",
+    "check-types": "tsc --noEmit"
   },
   "exports": {
     "./typescript": {
@@ -25,7 +24,6 @@
   },
   "devDependencies": {
     "@echo/database": "workspace:*",
-    "@echo/utils": "workspace:*",
     "@echo/typescript-config": "workspace:*",
     "@types/node": "^22.13.4",
     "typescript": "^5.7.3"
