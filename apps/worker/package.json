@@ -11,13 +11,16 @@
   },
   "dependencies": {
     "@echo/database": "workspace:*",
-    "@echo/redis": "workspace:*",
-    "@echo/utils": "workspace:*",
-    "@echo/types": "workspace:*",
     "@google/generative-ai": "^0.21.0"
   },
   "devDependencies": {
     "@echo/typescript-config": "workspace:*",
+    "@echo/zod": "workspace:*",
+    "@echo/functions": "workspace:",
+    "@echo/enums": "workspace:*",
+    "@echo/cache": "workspace:*",
+    "@echo/queues": "workspace:*",
+    "@echo/models": "workspace:*",
     "@types/node": "^22.13.4",
     "typescript": "^5.7.3"
   },

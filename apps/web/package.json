@@ -11,9 +11,6 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@echo/redis": "workspace:*",
-    "@echo/utils": "workspace:*",
-    "@echo/types": "workspace:*",
     "@echo/database": "workspace:*",
     "@echo/ui": "workspace:*",
     "@tailwindcss/postcss": "^4.0.6",

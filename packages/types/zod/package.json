@@ -1,0 +1,35 @@
+{
+  "name": "@echo/zod",
+  "version": "0.1.0",
+  "description": "This package contains shared zod types",
+  "main": "./dist/index.js",
+  "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
+  "license": "ISC",
+  "packageManager": "pnpm@10.5.2",
+  "exports": {
+    "./types": {
+      "types": "./src/types/index.ts",
+      "default": "./dist/types/index.js"
+    },
+    "./schemas": {
+      "types": "./src/schemas/index.ts",
+      "default": "./dist/types/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rm -R -f ./dist && pnpm tsc"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@echo/typescript-config": "workspace:*",
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  },
+  "keywords": [
+    "typescript",
+    "zod",
+    "types"
+  ]
+}

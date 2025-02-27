@@ -1,5 +1,5 @@
-import { Queue } from "@echo/redis";
-import { Cache } from "@echo/redis";
+import { Queue } from "@echo/queues";
+import { Cache } from "@echo/cache";
 import { handleCacheMiss } from "./handleCacheMiss";
 import { getResponse } from "./getResponse";
 

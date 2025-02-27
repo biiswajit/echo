@@ -1,5 +1,5 @@
 import { prisma } from "@echo/database";
-import { Cache } from "@echo/redis";
+import { Cache } from "@echo/cache";
 
 export async function handleCacheMiss(conversationId: string): Promise<boolean> {
     try {

@@ -1,7 +1,6 @@
-import { jobPayloadType } from "@echo/types/zod";
-import { getModelInstance } from "@echo/utils/functions";
-import { conversationHistoryType } from "@echo/types/typescript";
-import { Requests } from "@echo/types/typescript";
+import { jobPayloadType } from "@echo/zod/types";
+import { getModelInstance } from "./getModelInstance";
+import { conversationHistoryType, Requests } from "@echo/enums";
 
 // TODO: write logic to stream data to pub-sub
 export async function getResponse(
