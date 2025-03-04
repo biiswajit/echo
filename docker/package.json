@@ -1,0 +1,12 @@
+{
+  "name": "@echo/docker",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "sudo docker compose up #remove sudo command if using Windows/Mac",
+    "docker:stop": "sudo docker compose down #remove sudo command if using Windows/Mac"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
