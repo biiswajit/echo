@@ -110,7 +110,14 @@ importers:
         version: 5.8.2
 
   packages/core/cache:
+    dependencies:
+      redis:
+        specifier: ^4.7.0
+        version: 4.7.0
     devDependencies:
+      '@echo/abstracts':
+        specifier: workspace:*
+        version: link:../abstracts
       '@echo/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript

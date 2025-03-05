@@ -8,9 +8,13 @@
     "build": "tsc --build"
   },
   "devDependencies": {
+    "@echo/abstracts": "workspace:*",
     "@echo/typescript-config": "workspace:*",
     "@types/node": "^22.13.9",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "redis": "^4.7.0"
   },
   "keywords": [],
   "author": "",
