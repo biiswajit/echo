@@ -1,0 +1,11 @@
+// Conversation   1---n   Message
+model Conversation {
+    id              String @id @default(uuid())
+    name            String
+    createdAt       DateTime @default(now())
+    updatedAt       DateTime @updatedAt
+
+    messages        Message[]
+
+    @@map("conversations")
+}

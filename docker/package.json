@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "dev": "sudo docker compose up #remove sudo command if using Windows/Mac",
+    "dev": "pnpm docker:start",
+    "docker:start": "sudo docker compose up #remove sudo command if using Windows/Mac",
     "docker:stop": "sudo docker compose down #remove sudo command if using Windows/Mac"
   },
   "keywords": [],

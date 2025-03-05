@@ -1,0 +1,11 @@
+// Model   1---n   Message
+model Model {
+    id              String @id @default(uuid())
+    name            String @unique
+    provider        String
+    version         String
+
+    messages        Message[]
+
+    @@map("models")
+}

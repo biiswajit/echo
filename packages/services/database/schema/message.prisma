@@ -1,0 +1,20 @@
+enum Author {
+    USER @map("user")
+    ASSISTANT @map("assistant")
+}
+
+// Message   n---1   Model
+// Message   n---1   Conversation
+model Message {
+    id                  String @id @default(uuid())
+    author              Author
+    content             String @db.Text
+    createdAt           DateTime @default(now())
+    modelId             String
+    conversationId      String
+    
+    model               Model @relation(fields: [modelId], references: [id])
+    conversation        Conversation @relation(fields: [conversationId], references: [id])
+
+    @@map("messages")
+}
