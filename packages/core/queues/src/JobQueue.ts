@@ -1,6 +1,7 @@
-import {Queue, QueueReturnType} from "@echo/abstracts";
+import {Queue} from "@echo/abstracts";
 import {JobPayloadSchema, JobPayloadType} from "@echo/zod";
 import { RedisClientType, createClient } from "redis";
+import { QueueReturnType } from "@echo/natives";
 
 const JOB_QUEUE_NAME = "job-queue";
 export class JobQueue extends Queue<JobPayloadType> {

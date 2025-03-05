@@ -1,11 +1,7 @@
-import { Cache, CacheKeyType, CacheReturnType } from "@echo/abstracts";
-import {Author, Conversation} from "@echo/database";
+import { Cache } from "@echo/abstracts";
 import { createClient, RedisClientType } from "redis";
+import { ConversationMessageType, CacheKeyType, CacheReturnType } from "@echo/natives";
 
-export type ConversationMessageType = {
-    author: Author,
-    content: string
-}
 
 export const CONVERSATION_MESSAGES_CACHE_PREFIX = "messages";
 

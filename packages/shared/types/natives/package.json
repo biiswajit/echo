@@ -1,12 +1,12 @@
 {
-  "name": "@echo/queues",
+  "name": "@echo/natives",
   "version": "0.0.0",
   "description": "",
-  "main": "./dist/queues.js",
+  "main": "./dist/zod.js",
   "exports": {
     ".": {
-      "types": "./src/queues.ts",
-      "default": "./dist/queues.js"
+      "types": "./src/natives.ts",
+      "default": "./dist/natives.js"
     }
   },
   "scripts": {
@@ -15,14 +15,9 @@
   },
   "devDependencies": {
     "@echo/typescript-config": "workspace:*",
-    "@echo/abstracts": "workspace:*",
-    "@echo/zod": "workspace:*",
-    "@echo/natives": "workspace:*",
+    "@echo/database": "workspace:*",
     "@types/node": "^22.13.9",
     "typescript": "^5.8.2"
-  },
-  "dependencies": {
-    "redis": "^4.7.0"
   },
   "keywords": [],
   "author": "",

@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@echo/typescript-config": "workspace:*",
+    "@echo/natives": "workspace:*",
     "@types/node": "^22.13.9",
     "typescript": "^5.8.2"
   },

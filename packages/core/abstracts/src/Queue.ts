@@ -1,10 +1,5 @@
 import {RedisClientType} from "redis";
-
-export type QueueReturnType<PayloadType> = {
-    success: boolean;
-    error?: string;
-    data?: PayloadType;
-}
+import { QueueReturnType } from "@echo/natives";
 
 // TODO: if you want to add more features with then feel free to modify this
 export abstract class Queue<PayloadType> {

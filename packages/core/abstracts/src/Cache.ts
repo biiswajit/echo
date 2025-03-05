@@ -1,12 +1,5 @@
 import { RedisClientType } from "redis";
-
-export type CacheReturnType<T> = {
-    success: boolean;
-    error?: string;
-    data?: T;
-}
-
-export type CacheKeyType = string;
+import {CacheKeyType, CacheReturnType} from "@echo/natives";
 
 export abstract class Cache<PayloadType> {
     protected abstract client: RedisClientType | null;

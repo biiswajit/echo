@@ -1,12 +1,6 @@
-import {Cache, CacheKeyType, CacheReturnType} from "@echo/abstracts";
+import {Cache} from "@echo/abstracts";
 import { createClient, RedisClientType } from "redis";
-
-export type ConversationMetadataType = {
-    id: string,
-    createdAt: Date,
-    updatedAt: Date,
-    name: string
-}
+import { ConversationMetadataType, CacheKeyType, CacheReturnType } from "@echo/natives";
 
 export const CONVERSATION_METADATA_CACHE_PREFIX: string = "metadata";
 
