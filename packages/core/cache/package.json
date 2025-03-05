@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "description": "",
   "main": "./dist/cache.js",
+  "exports": {
+    ".": {
+      "types": "./src/cache.ts",
+      "default": "./dist/cache.js"
+    }
+  },
   "scripts": {
     "clean": "rm -rf ./dist && tsc --build --clean",
     "build": "tsc --build"
@@ -10,6 +16,7 @@
   "devDependencies": {
     "@echo/abstracts": "workspace:*",
     "@echo/typescript-config": "workspace:*",
+    "@echo/database": "workspace:*",
     "@types/node": "^22.13.9",
     "typescript": "^5.8.2"
   },
