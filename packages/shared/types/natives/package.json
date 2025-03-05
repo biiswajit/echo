@@ -2,7 +2,7 @@
   "name": "@echo/natives",
   "version": "0.0.0",
   "description": "",
-  "main": "./dist/zod.js",
+  "main": "./dist/natives.js",
   "exports": {
     ".": {
       "types": "./src/natives.ts",

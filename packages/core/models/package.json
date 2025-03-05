@@ -8,10 +8,16 @@
     "build": "tsc --build"
   },
   "devDependencies": {
-    "@echo/typescript-config": "workspace:*",
+    "@echo/abstracts": "workspace:*",
     "@echo/natives": "workspace:*",
+    "@echo/typescript-config": "workspace:*",
+    "@echo/prompts": "workspace:*",
+    "@echo/functions": "workspace:*",
     "@types/node": "^22.13.9",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.23.0"
   },
   "keywords": [],
   "author": "",
