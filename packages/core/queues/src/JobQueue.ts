@@ -2,14 +2,15 @@ import {Queue, QueueReturnType} from "@echo/abstracts";
 import {JobPayloadSchema, JobPayloadType} from "@echo/zod";
 import { RedisClientType, createClient } from "redis";
 
+const JOB_QUEUE_NAME = "job-queue";
 export class JobQueue extends Queue<JobPayloadType> {
     private static instance: JobQueue | null = null;
     protected queueName: string | null;
     protected client: RedisClientType | null;
 
-    private constructor(name: string) {
+    private constructor() {
         super();
-        this.queueName = name;
+        this.queueName = JOB_QUEUE_NAME;
         this.client = createClient();
         this.client.on("error", (err) => {
             console.error("error while create redis client!");
@@ -22,7 +23,7 @@ export class JobQueue extends Queue<JobPayloadType> {
     */
     static async getInstance(name: string) {
         if (!JobQueue.instance) {
-            JobQueue.instance = new JobQueue(name);
+            JobQueue.instance = new JobQueue();
             await JobQueue.instance.client?.connect();
         }
         return JobQueue.instance;
