@@ -3,14 +3,25 @@
   "version": "0.0.0",
   "description": "",
   "main": "./dist/queues.js",
+  "exports": {
+    ".": {
+      "types": "./src/queues.ts",
+      "default": "./dist/queues.js"
+    }
+  },
   "scripts": {
     "clean": "rm -rf ./dist && tsc --build --clean",
     "build": "tsc --build"
   },
   "devDependencies": {
     "@echo/typescript-config": "workspace:*",
+    "@echo/abstracts": "workspace:*",
+    "@echo/zod": "workspace:*",
     "@types/node": "^22.13.9",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "redis": "^4.7.0"
   },
   "keywords": [],
   "author": "",

@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "description": "",
   "main": "./dist/zod.js",
+  "exports": {
+    ".": {
+      "types": "./src/zod.ts",
+      "default": "./dist/zod.js"
+    }
+  },
   "scripts": {
     "clean": "rm -rf ./dist && tsc --build --clean",
     "build": "tsc --build"
