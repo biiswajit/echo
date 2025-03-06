@@ -1,0 +1,28 @@
+{
+  "name": "job-worker",
+  "version": "0.0.0",
+  "description": "job worker dequeue jobs from job queue and process them",
+  "main": "./dist/worker.js",
+  "scripts": {
+    "clean": "rm -rf ./dist && tsc --build --clean",
+    "build": "tsc --build"
+  },
+  "devDependencies": {
+    "@echo/cache": "workspace:*",
+    "@echo/database": "workspace:*",
+    "@echo/models": "workspace:*",
+    "@echo/queues": "workspace:*",
+    "@echo/zod": "workspace:*",
+    "@echo/natives": "workspace:*",
+    "@echo/typescript-config": "workspace:*",
+    "@types/node": "^22.13.9"
+  },
+  "keywords": [
+    "worker",
+    "service",
+    "backend",
+    "node"
+  ],
+  "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
+  "license": "ISC"
+}

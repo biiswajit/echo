@@ -55,12 +55,12 @@ export class JobQueue extends Queue<JobPayloadType> {
         if (!this.client) 
             return {success: false, error: "No queue instance found!"};
 
-        const redisRes = await this.client.lPop(this.queueName);
+        const redisRes = await this.client.blPop(this.queueName, 0);
         if (!redisRes)
             return {success: false, error: "Failed to dequeue job payload"};
 
         try {
-            const parsedPayload = JSON.parse(redisRes);
+            const parsedPayload = JSON.parse(redisRes.element);
             return {success: true, data: parsedPayload};
         }
         catch(err) {

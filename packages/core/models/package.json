@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "description": "",
   "main": "./dist/models.js",
+  "exports": {
+    ".": {
+      "types": "./src/models.ts",
+      "default": "./dist/models.js"
+    }
+  },
   "scripts": {
     "clean": "rm -rf ./dist && tsc --build --clean",
     "build": "tsc --build"

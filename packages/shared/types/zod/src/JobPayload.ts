@@ -6,7 +6,8 @@ export const JobPayloadSchema = z.object({
     prompt: z.string().min(1),
     conversationId: z.string().uuid().readonly(),
     modelId: z.string().uuid().readonly(),
-    jobType: z.enum(["reply", "response", "title"])
+    jobType: z.enum(["reply", "response", "title"]),
+    selectedText: z.string().optional()
 });
 
 export type JobPayloadType = z.infer<typeof JobPayloadSchema>;
