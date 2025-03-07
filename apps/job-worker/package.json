@@ -12,11 +12,12 @@
     "@echo/cache": "workspace:*",
     "@echo/database": "workspace:*",
     "@echo/models": "workspace:*",
-    "@echo/queues": "workspace:*",
-    "@echo/zod": "workspace:*",
     "@echo/natives": "workspace:*",
+    "@echo/queues": "workspace:*",
     "@echo/typescript-config": "workspace:*",
-    "@types/node": "^22.13.9"
+    "@echo/zod": "workspace:*",
+    "@types/node": "^22.13.9",
+    "uuid": "^11.1.0"
   },
   "keywords": [
     "worker",

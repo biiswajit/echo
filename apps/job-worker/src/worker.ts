@@ -1,14 +1,16 @@
-import {JobQueue} from "@echo/queues";
+import {JobQueue, DBQueue} from "@echo/queues";
 import {ConversationMessagesCache} from "@echo/cache";
 import { handleCacheMiss, responseMapper} from "./utils";
 import { ConversationMessageType } from "@echo/natives";
+import { v4 as uuidv4 } from 'uuid';
 
 async function main(): Promise<void> {
-    const queue = await JobQueue.getInstance();
+    const jobQueue = await JobQueue.getInstance();
     const cache = await ConversationMessagesCache.getInstance();
+    const dbQueue = await DBQueue.getInstance();
 
     while (true) {
-        const dequeued = await queue.dequeue();
+        const dequeued = await jobQueue.dequeue();
         // TODO: no retry now, but in future design a retry mechanism
         if (!dequeued.success || !dequeued.data) {
             console.error(dequeued.error);
@@ -38,6 +40,23 @@ async function main(): Promise<void> {
             if (!written) {
                 console.error("falied to write user and assistant response into cache");
             }
+
+            await dbQueue.enqueue({
+                requestId: uuidv4(),
+                author: "USER",
+                content: payload.prompt,
+                createdAt: new Date(),
+                conversationId: payload.conversationId,
+                modelId: payload.modelId
+            });
+            await dbQueue.enqueue({
+                requestId: uuidv4(),
+                author: "ASSISTANT",
+                content: response,
+                createdAt: new Date(),
+                conversationId: payload.conversationId,
+                modelId: payload.modelId
+            });        
         }
 
         // TODO: stream this response back to web instead of just printing out
