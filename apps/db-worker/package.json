@@ -1,0 +1,26 @@
+{
+  "name": "db-worker",
+  "version": "0.0.0",
+  "description": "db worker dequeue db requests from db_queue and store them in databse",
+  "main": "./dist/worker.js",
+  "scripts": {
+    "clean": "rm -rf ./dist && tsc --build --clean",
+    "build": "tsc --build",
+    "dev": "node ./dist/worker.js"
+  },
+  "devDependencies": {
+    "@echo/database": "workspace:*",
+    "@echo/queues": "workspace:*",
+    "@echo/typescript-config": "workspace:*",
+    "@echo/zod": "workspace:*",
+    "@types/node": "^22.13.9"
+  },
+  "keywords": [
+    "worker",
+    "service",
+    "backend",
+    "node"
+  ],
+  "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
+  "license": "ISC"
+}

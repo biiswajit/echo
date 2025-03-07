@@ -18,6 +18,24 @@ importers:
         specifier: 5.8.2
         version: 5.8.2
 
+  apps/db-worker:
+    devDependencies:
+      '@echo/database':
+        specifier: workspace:*
+        version: link:../../packages/services/database
+      '@echo/queues':
+        specifier: workspace:*
+        version: link:../../packages/core/queues
+      '@echo/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/configs/typescript
+      '@echo/zod':
+        specifier: workspace:*
+        version: link:../../packages/shared/types/zod
+      '@types/node':
+        specifier: ^22.13.9
+        version: 22.13.9
+
   apps/job-worker:
     devDependencies:
       '@echo/cache':

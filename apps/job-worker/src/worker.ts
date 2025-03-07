@@ -42,7 +42,6 @@ async function main(): Promise<void> {
             }
 
             await dbQueue.enqueue({
-                requestId: uuidv4(),
                 author: "USER",
                 content: payload.prompt,
                 createdAt: new Date(),
@@ -50,7 +49,6 @@ async function main(): Promise<void> {
                 modelId: payload.modelId
             });
             await dbQueue.enqueue({
-                requestId: uuidv4(),
                 author: "ASSISTANT",
                 content: response,
                 createdAt: new Date(),

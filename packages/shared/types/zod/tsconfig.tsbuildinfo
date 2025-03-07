@@ -1,1 +1,1 @@
-{"root":["./src/JobPayload.ts","./src/zod.ts"],"version":"5.8.2"}
+{"root":["./src/DBPayload.ts","./src/JobPayload.ts","./src/zod.ts"],"version":"5.8.2"}
