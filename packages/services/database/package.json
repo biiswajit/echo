@@ -15,6 +15,7 @@
     "db:generate": "prisma generate --schema ./schema",
     "db:migrate": "prisma migrate dev --schema ./schema",
     "db:deploy": "prisma migrate deploy",
+    "db:reset": "prisma migrate reset --schema ./schema",
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {

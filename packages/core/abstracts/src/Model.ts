@@ -6,19 +6,19 @@ export abstract class  Model<ClientType> {
 
     abstract generateTitle(
         prompt: string, 
-        modelParams?: ModelParamsType)
-    : Promise<string>;
+        modelParams?: ModelParamsType
+    ): Promise<string>;
 
     abstract generateResponse(
         prompt: string, 
         conversationHistory: ConversationHistoryType[] | null,
-        modelParams?: ModelParamsType)
-    : Promise<string>;
+        modelParams?: ModelParamsType
+    ): Promise<string>;
 
     abstract replyToSelection(
         prompt: string, 
         conversationHistory: ConversationHistoryType[] | null, 
         selectedText: string,
-        modelParams?: ModelParamsType)
-    : Promise<string>;
+        modelParams?: ModelParamsType
+    ): Promise<string>;
 }

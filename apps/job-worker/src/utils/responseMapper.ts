@@ -8,7 +8,6 @@ export async function responseMapper(
     messages: ConversationHistoryType[] | null
 ): Promise<string> {
     const model = modelMapper(payload.modelId);
-    
     if (!model) {
         return "";
     }

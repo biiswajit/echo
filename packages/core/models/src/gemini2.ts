@@ -11,22 +11,18 @@ export class Gemini2 extends Model<GoogleGenerativeAI> {
     protected client: GoogleGenerativeAI | null;
     private static instance: Gemini2 | null;
 
-    private constructor() {
+    private constructor(key: string) {
         super();
-
-        const API_KEY = process.env.GEMINI_API_KEY;
-        if (!API_KEY) {
+        if (!key) {
             throw new Error("GEMINI_API_KEY environment variable is not set.");
         }
-
-        this.client = new GoogleGenerativeAI(API_KEY);
+        this.client = new GoogleGenerativeAI(key);
     }
 
-    static getInstance(): Gemini2 {
+    static getInstance(key: string): Gemini2 {
         if (!Gemini2.instance) {
-            Gemini2.instance = new Gemini2();
+            Gemini2.instance = new Gemini2(key);
         }
-
         return Gemini2.instance;
     }
 
@@ -35,13 +31,12 @@ export class Gemini2 extends Model<GoogleGenerativeAI> {
         prompt: string,
         modelParams?: ModelParamsType
     ): Promise<string> {
-        if (!this.client) {
-            console.error("no client created");
-            return "";
-        }
-
         try {
-            const model = this.client?.getGenerativeModel({
+            if (!this.client) {
+                throw new Error(`no ${MODEL_NAME} client found`);
+            }
+
+            const model = this.client.getGenerativeModel({
                 model: MODEL_NAME,
                 systemInstruction: TITLE_SYSTEM_PROMPT
             });
@@ -51,13 +46,13 @@ export class Gemini2 extends Model<GoogleGenerativeAI> {
 
             const result = await model.generateContent(prompt);
             if (!result) {
-                return "";
+                throw new Error("unable to generate response");
             }
 
             return result.response.text();
         }
-        catch (e) {
-            console.error(e);
+        catch (err) {
+            console.error(err);
             return "";
         }
     }
@@ -68,17 +63,16 @@ export class Gemini2 extends Model<GoogleGenerativeAI> {
         conversationHistory: ConversationHistoryType[] | null,
         modelParams?: ModelParamsType
     ): Promise<string> {
-        if (!this.client) {
-            console.error("no client created");
-            return "";
-        }
-
-        if (conversationHistory && conversationHistory.length > 0) {
-            prompt = formatHistory(conversationHistory) + prompt;
-        }
-
         try {
-            const model = this.client?.getGenerativeModel({
+            if (!this.client) {
+                throw new Error(`no ${MODEL_NAME} client found`);
+            }
+
+            if (conversationHistory && conversationHistory.length > 0) {
+                prompt = formatHistory(conversationHistory) + prompt;
+            }
+
+            const model = this.client.getGenerativeModel({
                 model: MODEL_NAME,
                 systemInstruction: RESPONSE_SYSTEM_PROMPT
             });
@@ -88,8 +82,7 @@ export class Gemini2 extends Model<GoogleGenerativeAI> {
 
             const result = await model.generateContentStream(prompt);
             if (!result) {
-                console.error("unable to generate response");
-                return "";
+                throw new Error("unable to generate response");
             }
 
             // TODO: figure out a way to send stream message
@@ -99,11 +92,10 @@ export class Gemini2 extends Model<GoogleGenerativeAI> {
                 fullResponse += chunkText;
                 process.stdout.write(chunkText);
             }
-
             return fullResponse;
         }
-        catch (e) {
-            console.error(e);
+        catch (err) {
+            console.error(err);
             return "";
         }
     }
@@ -115,23 +107,22 @@ export class Gemini2 extends Model<GoogleGenerativeAI> {
         selectedText: string, 
         modelParams?: ModelParamsType
     ): Promise<string> {
-        if (!this.client) {
-            console.error("no client created");
-            return "";
-        }
-
-        if (conversationHistory) {
-            prompt = formatHistory(conversationHistory) + inlineEditor(selectedText, prompt);
-        }
-        else {
-            prompt = inlineEditor(selectedText, prompt);
-        }
-
         try {
+            if (!this.client) {
+                throw new Error(`no ${MODEL_NAME} client found`);
+            }
+
+            if (conversationHistory) {
+                prompt = formatHistory(conversationHistory) + inlineEditor(selectedText, prompt);
+            }
+            else {
+                prompt = inlineEditor(selectedText, prompt);
+            }
+
             return await this.generateResponse(prompt, null);
         }
-        catch (e) {
-            console.error(e);
+        catch (err) {
+            console.error(err);
             return "";
         }
     }

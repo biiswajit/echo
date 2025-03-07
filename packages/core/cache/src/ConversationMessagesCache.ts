@@ -4,6 +4,7 @@ import { ConversationMessageType, CacheKeyType, CacheReturnType } from "@echo/na
 
 
 export const CONVERSATION_MESSAGES_CACHE_PREFIX = "messages";
+export const CONVERSATION_MESSAGES_CACHE_TTL = 30 * 60; // 30 minutes
 
 /*
 * ConversationMessagesCache is using list to store all messages belongs to a conversation
@@ -20,8 +21,7 @@ export class ConversationMessagesCache extends Cache<ConversationMessageType[]> 
         });
     }
 
-    static async getInstance()
-    : Promise<ConversationMessagesCache> {
+    static async getInstance(): Promise<ConversationMessagesCache> {
         if (!ConversationMessagesCache.instance) {
             ConversationMessagesCache.instance = new ConversationMessagesCache();
             await ConversationMessagesCache.instance.client?.connect();
@@ -29,69 +29,74 @@ export class ConversationMessagesCache extends Cache<ConversationMessageType[]> 
         return ConversationMessagesCache.instance;
     }
 
-    async read(key: CacheKeyType)
-    : Promise<CacheReturnType<ConversationMessageType[]>> {
-        if (!this.client) {
-            return {success: false, error: "no instance found"};
-        }
-        if (!key) {
-            return {success: false, error: "invalid key provided"};
-        }
-
-        const redisRes = await this.client.lRange(`${CONVERSATION_MESSAGES_CACHE_PREFIX}:${key}`, 0, -1);
-        if (!redisRes || redisRes.length <= 0) {
-            return {success: false, error: "no messages found in the cache"};
-        }
-
+    async read(
+        key: CacheKeyType
+    ): Promise<CacheReturnType<ConversationMessageType[]>> {
         try {
-            return {success: true, data: redisRes.map(item => JSON.parse(item))};
+            if (!key || !this.client) {
+                throw new Error("no conversation id or client found");
+            }
+
+            const messages = await this.client.lRange(`${CONVERSATION_MESSAGES_CACHE_PREFIX}:${key}`, 0, -1);
+            if (!messages || messages.length <= 0) {
+                throw new Error("no messages found from cache");
+            }
+
+            return {success: true, data: messages.map(item => JSON.parse(item))}
         }
         catch(err) {
-            return {success: false, error: "invalid message payload"};
+            console.error(err);
+            return {success: false, error: "unable to read from cache, follow log for more info"};
         }
     }
 
-    async write(key: CacheKeyType, payload: ConversationMessageType[])
-    : Promise<CacheReturnType<ConversationMessageType[]>> {
-        if (!this.client) {
-            return {success: false, error: "no instance found"};
-        }
-        if (!key) {
-            return {success: false, error: "invalid key provided"};
-        }
-
+    async write(
+        key: CacheKeyType, 
+        payload: ConversationMessageType[]
+    ): Promise<boolean> {
         try {
+            if (!key || !this.client) {
+                throw new Error("no conversation id or client found");
+            }
+
             const multi = this.client.multi();
             for (const item of payload) {
                 multi.rPush(`${CONVERSATION_MESSAGES_CACHE_PREFIX}:${key}`, JSON.stringify(item));
             }
-
-            const redisRes = await multi.exec();
-            if (!redisRes || redisRes.length <= 0) {
-                return {success: false, error: "unable to write given payload"};
+            const value = await multi.exec();
+            if (!value || value.length <= 0) {
+                throw new Error("unable to write messages into cache");
             }
-            return {success: true, data: payload};
+            // delete this messages list after 30 minutes from last update
+            await this.client.expire(`${CONVERSATION_MESSAGES_CACHE_PREFIX}:${key}`, CONVERSATION_MESSAGES_CACHE_TTL);
+
+            return true;
         }
         catch(err) {
-            return {success: false, error: "invalid payload provided"};
+            console.error(err);
+            return false;
         }
     }
 
-    async delete(key: CacheKeyType)
-    : Promise<CacheReturnType<ConversationMessageType[]>> {
-        if (!this.client) {
-            return {success: false, error: "no instance found"};
+    async delete(
+        key: CacheKeyType
+    ): Promise<boolean> {
+        try {
+            if (!key || !this.client) {
+                throw new Error("no conversation id or client found");
+            }
+
+            const value = await this.client.del(`${CONVERSATION_MESSAGES_CACHE_PREFIX}:${key}`);
+            if (value <= 0) {
+                throw new Error("no messages deleted from cache");
+            }
+
+            return true;
         }
-        if (!key) {
-            return {success: false, error: "invalid key provided"};
+        catch(err) {
+            console.error(err);
+            return false;
         }
-        
-        const redisRes = await this.client.del(`${CONVERSATION_MESSAGES_CACHE_PREFIX}:${key}`);
-        if (redisRes <= 0) {
-            return {success: false, error: "unable to delete key"};
-        }
-        
-        return {success: true}
     }
 
     async disconnect(): Promise<void> {
@@ -102,6 +107,7 @@ export class ConversationMessagesCache extends Cache<ConversationMessageType[]> 
         if (this.client) {
             await this.client.disconnect();
         }
+        
         ConversationMessagesCache.instance = null;
         console.log("cache disconnected");
     }

@@ -3,7 +3,7 @@ import {ConversationHistoryType} from "@echo/natives";
 export function formatHistory(
     conversations: ConversationHistoryType[]
 ): string {
-    if (!history) return "";
+    if (!conversations) return "";
     let formattedHistory: string = "Here's a conversation history: \n";
     for (const conversation of conversations) {
         formattedHistory += `${conversation.author}: ${conversation.content}`;

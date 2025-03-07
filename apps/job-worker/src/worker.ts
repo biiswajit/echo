@@ -3,55 +3,46 @@ import {ConversationMessagesCache} from "@echo/cache";
 import { handleCacheMiss, responseMapper} from "./utils";
 import { ConversationMessageType } from "@echo/natives";
 
-/*
-- dequeue one job from job queue
-- check for messages in cache (look using conversationId)
-    - message not in cache then handle cache miss
-    - get messages from db
-    - store the message in cache
-    - fetch the message again from cache
-- send conversation history and job payload to llm
-- get response and print the response
-*/
-
-// TODO: right now response from model is just printed out, figure out how to stream them to web
 async function main(): Promise<void> {
-    const JOB_QUEUE_NAME = "job_queue";
-    const queue = await JobQueue.getInstance(JOB_QUEUE_NAME);
+    const queue = await JobQueue.getInstance();
     const cache = await ConversationMessagesCache.getInstance();
 
     while (true) {
-        const queueRes = await queue.dequeue();
+        const dequeued = await queue.dequeue();
         // TODO: no retry now, but in future design a retry mechanism
-        if (!queueRes.success) {
-            console.error(queueRes.error);
+        if (!dequeued.success || !dequeued.data) {
+            console.error(dequeued.error);
             continue;
         }
+        const payload = dequeued.data;
 
-        const payload = queueRes.data;
-        if (!payload) {
-            console.error("received undefined from job queue");
-            continue;
+        let response: string = "";
+        if (payload.jobType === "title") {
+            response = await responseMapper(payload, null);
         }
+        else {
+            let read = await cache.read(payload.conversationId);
+            if (!read.success) {
+                console.log("cache miss");
+                await handleCacheMiss(payload.conversationId);
+                read = await cache.read(payload.conversationId);
+            }
+            let messages: ConversationMessageType[] | null = read.data ? read.data : null;
 
-        let cacheRes = await cache.read(payload.conversationId);
-        if (!cacheRes.success) {
-            console.log("cache miss");
-            const missHandled = await handleCacheMiss(payload.conversationId);
-            if (missHandled) {
-                cacheRes = await cache.read(payload.conversationId);
+            response = await responseMapper(payload, messages);
+            
+            const written = await cache.write(
+                payload.conversationId, 
+                [{author: "USER", content: payload.prompt}, {author: "ASSISTANT", content: response}]
+            );
+            if (!written) {
+                console.error("falied to write user and assistant response into cache");
             }
         }
 
-        let messages: ConversationMessageType[] | null;
-        if (!cacheRes.data) {
-            messages = null;
-        }
-        else {
-            messages = cacheRes.data;
-        }
-        
-        const response = responseMapper(payload, messages);
-        console.log(`\n\nModel is saying: ${response}\n\n`);
+        // TODO: stream this response back to web instead of just printing out
+        console.log(`Response from model: ${response}`);
     }
 }
+
+main();

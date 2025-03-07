@@ -3,7 +3,7 @@ import {JobPayloadSchema, JobPayloadType} from "@echo/zod";
 import { RedisClientType, createClient } from "redis";
 import { QueueReturnType } from "@echo/natives";
 
-const JOB_QUEUE_NAME = "job-queue";
+const JOB_QUEUE_NAME = "job_queue";
 export class JobQueue extends Queue<JobPayloadType> {
     private static instance: JobQueue | null = null;
     protected queueName: string | null;
@@ -22,7 +22,8 @@ export class JobQueue extends Queue<JobPayloadType> {
     Since JobQueue is a singleton class you can not be able to create instance of this class
     Use getInstance() function to get or create one single instance
     */
-    static async getInstance(name: string) {
+    static async getInstance()
+    : Promise<JobQueue> {
         if (!JobQueue.instance) {
             JobQueue.instance = new JobQueue();
             await JobQueue.instance.client?.connect();
@@ -30,61 +31,75 @@ export class JobQueue extends Queue<JobPayloadType> {
         return JobQueue.instance;
     }
 
-    async enqueue(payload: JobPayloadType)
-    : Promise<QueueReturnType<JobPayloadType>> {
-        if (!this.queueName)
-            return {success: false, error: "No queue found!"};
-        if (!this.client) 
-            return {success: false, error: "No queue instance found!"};
+    async enqueue(payload: JobPayloadType
+    ): Promise<boolean> {
+        try {
+            if (!this.queueName || !this.client) {
+                throw new Error("no client or queue found")
+            }
 
-        const zodRes = JobPayloadSchema.safeParse(payload);
-        if (!zodRes.success)
-            return {success: false, error: "Job payload schema invalid"};
+            const zod = JobPayloadSchema.safeParse(payload);
+            if (!zod.success) {
+                throw new Error(`invalid job schema received ${zod.error}`);
+            }
 
-        const redisRes = await this.client.rPush(this.queueName, JSON.stringify(payload));
-        if (!redisRes || redisRes <= 0) 
-            return {success: false, error: "Faild to enqueue job payload"};
+            const value = await this.client.rPush(this.queueName, JSON.stringify(payload));
+            if (!value || value <= 0) {
+                throw new Error("failed to enqueue job");
+            }
 
-        return {success: true, data: payload};
+            return true;
+        }
+        catch(err) {
+            console.error(err);
+            return false;
+        }
     }
 
     async dequeue()
     : Promise<QueueReturnType<JobPayloadType>> {
-        if (!this.queueName)
-            return {success: false, error: "No queue found!"};
-        if (!this.client) 
-            return {success: false, error: "No queue instance found!"};
-
-        const redisRes = await this.client.blPop(this.queueName, 0);
-        if (!redisRes)
-            return {success: false, error: "Failed to dequeue job payload"};
-
         try {
-            const parsedPayload = JSON.parse(redisRes.element);
-            return {success: true, data: parsedPayload};
+            if (!this.queueName || !this.client) {
+                throw new Error("no client or queue found")
+            }
+
+            const value = await this.client.blPop(this.queueName, 0);
+            if (!value || !value.element) {
+                throw new Error("no valid job received from queue");
+            }
+
+            return {success: true, data: JSON.parse(value.element)};
         }
         catch(err) {
-            return {success: false, error: "Invalid job payload schema received"}
+            console.error(err);
+            return {success: false, error: "unable to get job from queue, check log for more info"};
         }
     }
 
     async disconnect(): Promise<void> {
-        if (!JobQueue.instance)
+        if (!JobQueue.instance) {
             return;
+        }
 
-        if (this.client)
+        if (this.client) {
             await this.client.disconnect();
+        }
+
         JobQueue.instance = null;
         console.log("job queue disconnected!");
     }
 
     async length(): Promise<number> {
-        if (!this.queueName)
-            return -1;
-        if (!this.client) 
-            return -1;
+        try {
+            if (!this.queueName || !this.client) {
+                throw new Error("no client or queue found")
+            }
 
-        const length = await this.client.lLen(this.queueName);
-        return length;
+            return await this.client.lLen(this.queueName);
+        }
+        catch(err) {
+            console.error(err);
+            return -1;
+        }
     }
 }
