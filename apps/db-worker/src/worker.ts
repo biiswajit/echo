@@ -1,4 +1,4 @@
-import { storeIntoDB, dequeueFromDBQueue } from "./utils";
+import { storeIntoDB, dequeueFromDBQueue } from "./utils/index.js";
 
 const BATCH_INTERVAL = 30000;
 const MAX_NUMBER_OF_MESSAGES = 50;

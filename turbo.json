@@ -7,10 +7,14 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"],
+      "env": ["GEMINI_API_KEY", "NODE_ENV"]
     },
-    "lint": {
-      "dependsOn": ["^lint"]
+    "linter:lint": {
+      "dependsOn": ["^linter:lint"]
+    },
+    "linter:fix": {
+      "dependsOn": ["^linter:fix"]
     },
     "check-types": {
       "dependsOn": ["^check-types"]

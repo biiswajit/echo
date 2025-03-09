@@ -1,2 +1,2 @@
-export * from "./ConversationMessagesCache";
-export * from "./ConversationMetadataCache";
+export * from "./ConversationMessagesCache.js";
+export * from "./ConversationMetadataCache.js";

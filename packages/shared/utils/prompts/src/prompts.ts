@@ -1,2 +1,2 @@
-export * from "./title";
-export * from "./response";
+export * from "./title.js";
+export * from "./response.js";

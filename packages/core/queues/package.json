@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "main": "./dist/queues.js",
+  "type": "module",
   "exports": {
     ".": {
       "types": "./src/queues.ts",
@@ -11,13 +12,16 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist && tsc --build --clean",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "linter:lint": "eslint --max-warnings 0",
+    "linter:fix": "eslint --fix"
   },
   "devDependencies": {
     "@echo/typescript-config": "workspace:*",
     "@echo/abstracts": "workspace:*",
     "@echo/zod": "workspace:*",
     "@echo/natives": "workspace:*",
+    "@echo/eslint-config": "workspace:*",
     "@types/node": "^22.13.9",
     "typescript": "^5.8.2"
   },

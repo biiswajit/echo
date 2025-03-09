@@ -1,4 +1,4 @@
-import { modelMapper } from "./modelMapper";
+import { modelMapper } from "./modelMapper.js";
 import { JobPayloadType } from "@echo/zod";
 import {ConversationHistoryType} from "@echo/natives";
 

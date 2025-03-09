@@ -23,6 +23,9 @@ importers:
       '@echo/database':
         specifier: workspace:*
         version: link:../../packages/services/database
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/configs/eslint
       '@echo/queues':
         specifier: workspace:*
         version: link:../../packages/core/queues
@@ -44,6 +47,9 @@ importers:
       '@echo/database':
         specifier: workspace:*
         version: link:../../packages/services/database
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/configs/eslint
       '@echo/models':
         specifier: workspace:*
         version: link:../../packages/core/models
@@ -163,6 +169,9 @@ importers:
         specifier: ^4.7.0
         version: 4.7.0
     devDependencies:
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/eslint
       '@echo/natives':
         specifier: workspace:*
         version: link:../../shared/types/natives
@@ -185,6 +194,9 @@ importers:
       '@echo/abstracts':
         specifier: workspace:*
         version: link:../abstracts
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/eslint
       '@echo/natives':
         specifier: workspace:*
         version: link:../../shared/types/natives
@@ -207,6 +219,9 @@ importers:
       '@echo/abstracts':
         specifier: workspace:*
         version: link:../abstracts
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/eslint
       '@echo/functions':
         specifier: workspace:*
         version: link:../../shared/utils/functions
@@ -235,6 +250,9 @@ importers:
       '@echo/abstracts':
         specifier: workspace:*
         version: link:../abstracts
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/eslint
       '@echo/natives':
         specifier: workspace:*
         version: link:../../shared/types/natives
@@ -257,6 +275,9 @@ importers:
         specifier: ^6.4.1
         version: 6.4.1(prisma@6.4.1(typescript@5.8.2))(typescript@5.8.2)
     devDependencies:
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/eslint
       '@echo/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript
@@ -275,6 +296,9 @@ importers:
       '@echo/database':
         specifier: workspace:*
         version: link:../../../services/database
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../../configs/eslint
       '@echo/typescript-config':
         specifier: workspace:*
         version: link:../../../configs/typescript
@@ -291,6 +315,9 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../../configs/eslint
       '@echo/typescript-config':
         specifier: workspace:*
         version: link:../../../configs/typescript
@@ -303,6 +330,9 @@ importers:
 
   packages/shared/utils/functions:
     devDependencies:
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../../configs/eslint
       '@echo/natives':
         specifier: workspace:*
         version: link:../../types/natives
@@ -318,6 +348,9 @@ importers:
 
   packages/shared/utils/prompts:
     devDependencies:
+      '@echo/eslint-config':
+        specifier: workspace:*
+        version: link:../../../configs/eslint
       '@echo/typescript-config':
         specifier: workspace:*
         version: link:../../../configs/typescript

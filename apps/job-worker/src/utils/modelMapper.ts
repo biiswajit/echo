@@ -1,5 +1,5 @@
 import {Gemini2} from "@echo/models";
-import {models} from "./avaliableModels";
+import {models} from "./avaliableModels.js";
 
 // TODO: as new model are addad to platform add here also
 export function modelMapper(modelId: string) {

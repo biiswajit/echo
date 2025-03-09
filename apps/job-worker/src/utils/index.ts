@@ -1,2 +1,2 @@
-export * from "./handleCacheMiss";
-export * from "./responseMapper";
+export * from "./handleCacheMiss.js";
+export * from "./responseMapper.js";

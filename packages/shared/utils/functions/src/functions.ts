@@ -1,2 +1,2 @@
-export * from "./historyFormatter";
-export * from "./inlineEditor";
+export * from "./historyFormatter.js";
+export * from "./inlineEditor.js";

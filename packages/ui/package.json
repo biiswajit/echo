@@ -10,7 +10,8 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "lint": "eslint . --max-warnings 0",
+    "linter:lint": "eslint . --max-warnings 0",
+    "linter:fix": "eslint --fix",
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit"
   },

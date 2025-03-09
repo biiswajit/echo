@@ -1,2 +1,2 @@
-export * from "./JobQueue";
-export * from "./DBQueue";
+export * from "./JobQueue.js";
+export * from "./DBQueue.js";

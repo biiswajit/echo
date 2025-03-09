@@ -1,8 +1,7 @@
 import {JobQueue, DBQueue} from "@echo/queues";
 import {ConversationMessagesCache} from "@echo/cache";
-import { handleCacheMiss, responseMapper} from "./utils";
+import { handleCacheMiss, responseMapper} from "./utils/index.js";
 import { ConversationMessageType } from "@echo/natives";
-import { v4 as uuidv4 } from 'uuid';
 
 async function main(): Promise<void> {
     const jobQueue = await JobQueue.getInstance();
@@ -29,7 +28,7 @@ async function main(): Promise<void> {
                 await handleCacheMiss(payload.conversationId);
                 read = await cache.read(payload.conversationId);
             }
-            let messages: ConversationMessageType[] | null = read.data ? read.data : null;
+            const messages: ConversationMessageType[] | null = read.data ? read.data : null;
 
             response = await responseMapper(payload, messages);
             

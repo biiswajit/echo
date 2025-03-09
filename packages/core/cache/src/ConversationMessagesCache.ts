@@ -16,7 +16,7 @@ export class ConversationMessagesCache extends Cache<ConversationMessageType[]> 
     private constructor() {
         super();
         this.client = createClient();
-        this.client.on("error", (err) => {
+        this.client.on("error", () => {
             console.error("error while create redis client");
         });
     }

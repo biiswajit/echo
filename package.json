@@ -5,7 +5,8 @@
     "clean": "turbo run clean",
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "linter:lint": "turbo run linter:lint",
+    "linter:fix": "turbo run linter:fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
     "db:migrate": "pnpm --filter @echo/database db:migrate"

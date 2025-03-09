@@ -1,2 +1,2 @@
-export * from "./JobPayload";
-export * from "./DBPayload";
+export * from "./JobPayload.js";
+export * from "./DBPayload.js";

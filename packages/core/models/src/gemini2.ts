@@ -1,5 +1,5 @@
 import {Model} from "@echo/abstracts";
-import { ModelParamsType, ConversationHistoryType} from "@echo/natives";
+import { ConversationHistoryType} from "@echo/natives";
 import {GoogleGenerativeAI} from "@google/generative-ai";
 import {TITLE_SYSTEM_PROMPT, RESPONSE_SYSTEM_PROMPT} from "@echo/prompts";
 import {formatHistory, inlineEditor} from "@echo/functions";
@@ -28,8 +28,7 @@ export class Gemini2 extends Model<GoogleGenerativeAI> {
 
     // TODO: do something with the modelParams
     async generateTitle(
-        prompt: string,
-        modelParams?: ModelParamsType
+        prompt: string, 
     ): Promise<string> {
         try {
             if (!this.client) {
@@ -61,7 +60,6 @@ export class Gemini2 extends Model<GoogleGenerativeAI> {
     async generateResponse(
         prompt: string,
         conversationHistory: ConversationHistoryType[] | null,
-        modelParams?: ModelParamsType
     ): Promise<string> {
         try {
             if (!this.client) {
@@ -104,8 +102,7 @@ export class Gemini2 extends Model<GoogleGenerativeAI> {
     async replyToSelection(
         prompt: string, 
         conversationHistory: ConversationHistoryType[] | null, 
-        selectedText: string, 
-        modelParams?: ModelParamsType
+        selectedText: string,          
     ): Promise<string> {
         try {
             if (!this.client) {

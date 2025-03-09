@@ -13,7 +13,7 @@ export class JobQueue extends Queue<JobPayloadType> {
         super();
         this.queueName = JOB_QUEUE_NAME;
         this.client = createClient();
-        this.client.on("error", (err) => {
+        this.client.on("error", () => {
             console.error("error while create redis client!");
         });
     }
