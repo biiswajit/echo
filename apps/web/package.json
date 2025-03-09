@@ -14,6 +14,7 @@
 	"dependencies": {
 		"@echo/ui": "workspace:*",
 		"@tailwindcss/postcss": "^4.0.12",
+		"jotai": "^2.12.1",
 		"next": "^15.2.1",
 		"postcss": "^8.5.3",
 		"react": "^19.0.0",
@@ -21,8 +22,8 @@
 		"tailwindcss": "^4.0.12"
 	},
 	"devDependencies": {
-		"@echo/tailwind-config": "workspace:^",
 		"@echo/eslint-config": "workspace:*",
+		"@echo/tailwind-config": "workspace:^",
 		"@echo/typescript-config": "workspace:*",
 		"@types/node": "^22.13.9",
 		"@types/react": "19.0.10",
