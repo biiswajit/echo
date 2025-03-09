@@ -8,4 +8,4 @@ If including code, use appropriate language-specific syntax highlighting.
 If including references, provide them in a consistent format (e.g., APA, MLA).
 If including tables, format them using Markdown table syntax.
 </message_formatting_info>
-`
+`;

@@ -1,33 +1,33 @@
 {
-  "name": "@echo/cache",
-  "version": "0.0.0",
-  "description": "",
-  "main": "./dist/cache.js",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./src/cache.ts",
-      "default": "./dist/cache.js"
-    }
-  },
-  "scripts": {
-    "clean": "rm -rf ./dist && tsc --build --clean",
-    "build": "tsc --build",
-    "linter:lint": "eslint --max-warnings 0",
-    "linter:fix": "eslint --fix"
-  },
-  "devDependencies": {
-    "@echo/abstracts": "workspace:*",
-    "@echo/typescript-config": "workspace:*",
-    "@echo/natives": "workspace:*",
-    "@echo/eslint-config": "workspace:*",
-    "@types/node": "^22.13.9",
-    "typescript": "^5.8.2"
-  },
-  "dependencies": {
-    "redis": "^4.7.0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "@echo/cache",
+	"version": "0.0.0",
+	"description": "",
+	"main": "./dist/cache.js",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./src/cache.ts",
+			"default": "./dist/cache.js"
+		}
+	},
+	"scripts": {
+		"clean": "rm -rf ./dist && tsc --build --clean",
+		"build": "tsc --build",
+		"linter:lint": "eslint --max-warnings 0",
+		"linter:fix": "eslint --fix"
+	},
+	"devDependencies": {
+		"@echo/abstracts": "workspace:*",
+		"@echo/typescript-config": "workspace:*",
+		"@echo/natives": "workspace:*",
+		"@echo/eslint-config": "workspace:*",
+		"@types/node": "^22.13.9",
+		"typescript": "^5.8.2"
+	},
+	"dependencies": {
+		"redis": "^4.7.0"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
 }

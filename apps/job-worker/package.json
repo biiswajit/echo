@@ -1,34 +1,34 @@
 {
-  "name": "job-worker",
-  "version": "0.0.0",
-  "description": "job worker dequeue jobs from job queue and process them",
-  "main": "./dist/worker.js",
-  "type": "module",
-  "scripts": {
-    "clean": "rm -rf ./dist && tsc --build --clean",
-    "build": "tsc --build",
-    "dev": "node --env-file=.env ./dist/worker.js",
-    "linter:lint": "eslint --max-warnings 0",
-    "linter:fix": "eslint --fix"
-  },
-  "devDependencies": {
-    "@echo/cache": "workspace:*",
-    "@echo/database": "workspace:*",
-    "@echo/models": "workspace:*",
-    "@echo/natives": "workspace:*",
-    "@echo/queues": "workspace:*",
-    "@echo/typescript-config": "workspace:*",
-    "@echo/zod": "workspace:*",
-    "@echo/eslint-config": "workspace:*",
-    "@types/node": "^22.13.9",
-    "uuid": "^11.1.0"
-  },
-  "keywords": [
-    "worker",
-    "service",
-    "backend",
-    "node"
-  ],
-  "author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
-  "license": "ISC"
+	"name": "job-worker",
+	"version": "0.0.0",
+	"description": "job worker dequeue jobs from job queue and process them",
+	"main": "./dist/worker.js",
+	"type": "module",
+	"scripts": {
+		"clean": "rm -rf ./dist && tsc --build --clean",
+		"build": "tsc --build",
+		"dev": "node --env-file=.env ./dist/worker.js",
+		"linter:lint": "eslint --max-warnings 0",
+		"linter:fix": "eslint --fix"
+	},
+	"devDependencies": {
+		"@echo/cache": "workspace:*",
+		"@echo/database": "workspace:*",
+		"@echo/models": "workspace:*",
+		"@echo/natives": "workspace:*",
+		"@echo/queues": "workspace:*",
+		"@echo/typescript-config": "workspace:*",
+		"@echo/zod": "workspace:*",
+		"@echo/eslint-config": "workspace:*",
+		"@types/node": "^22.13.9",
+		"uuid": "^11.1.0"
+	},
+	"keywords": [
+		"worker",
+		"service",
+		"backend",
+		"node"
+	],
+	"author": "Biswajit Malakar <mebiswajitmalakar@gmail.com>",
+	"license": "ISC"
 }

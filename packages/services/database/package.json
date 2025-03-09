@@ -1,37 +1,37 @@
 {
-  "name": "@echo/database",
-  "version": "0.0.0",
-  "description": "",
-  "main": "./dist/prisma.js",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./src/prisma.ts",
-      "default": "./dist/prisma.js"
-    }
-  },
-  "scripts": {
-    "clean": "rm -rf ./dist && tsc --build --clean",
-    "build": "tsc --build",
-    "db:generate": "prisma generate --schema ./schema",
-    "db:migrate": "prisma migrate dev --schema ./schema",
-    "db:deploy": "prisma migrate deploy",
-    "db:reset": "prisma migrate reset --schema ./schema",
-    "check-types": "tsc --noEmit",
-    "linter:lint": "eslint --max-warnings 0",
-    "linter:fix": "eslint --fix"
-  },
-  "devDependencies": {
-    "@echo/typescript-config": "workspace:*",
-    "@echo/eslint-config": "workspace:*",
-    "@types/node": "^22.13.9",
-    "prisma": "^6.4.1",
-    "typescript": "^5.8.2"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@prisma/client": "^6.4.1"
-  }
+	"name": "@echo/database",
+	"version": "0.0.0",
+	"description": "",
+	"main": "./dist/prisma.js",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./src/prisma.ts",
+			"default": "./dist/prisma.js"
+		}
+	},
+	"scripts": {
+		"clean": "rm -rf ./dist && tsc --build --clean",
+		"build": "tsc --build",
+		"db:generate": "prisma generate --schema ./schema",
+		"db:migrate": "prisma migrate dev --schema ./schema",
+		"db:deploy": "prisma migrate deploy",
+		"db:reset": "prisma migrate reset --schema ./schema",
+		"check-types": "tsc --noEmit",
+		"linter:lint": "eslint --max-warnings 0",
+		"linter:fix": "eslint --fix"
+	},
+	"devDependencies": {
+		"@echo/typescript-config": "workspace:*",
+		"@echo/eslint-config": "workspace:*",
+		"@types/node": "^22.13.9",
+		"prisma": "^6.4.1",
+		"typescript": "^5.8.2"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@prisma/client": "^6.4.1"
+	}
 }

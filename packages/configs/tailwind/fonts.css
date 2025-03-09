@@ -1,68 +1,68 @@
 @font-face {
-    font-family: heading;
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url("./fonts/IBMPlexMono-Bold.ttf");
+	font-family: heading;
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("./fonts/IBMPlexMono-Bold.ttf");
 }
 @font-face {
-    font-family: heading;
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url("./fonts/IBMPlexMono-Medium.ttf");
+	font-family: heading;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("./fonts/IBMPlexMono-Medium.ttf");
 }
 @font-face {
-    font-family: heading;
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("./fonts/IBMPlexMono-Regular.ttf");
+	font-family: heading;
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("./fonts/IBMPlexMono-Regular.ttf");
 }
 @font-face {
-    font-family: heading;
-    font-style: italic;
-    font-weight: 700;
-    font-display: swap;
-    src: url("./fonts/IBMPlexMono-BoldItalic.ttf");
+	font-family: heading;
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+	src: url("./fonts/IBMPlexMono-BoldItalic.ttf");
 }
 @font-face {
-    font-family: heading;
-    font-style: italic;
-    font-weight: 500;
-    font-display: swap;
-    src: url("./fonts/IBMPlexMono-MediumItalic.ttf");
+	font-family: heading;
+	font-style: italic;
+	font-weight: 500;
+	font-display: swap;
+	src: url("./fonts/IBMPlexMono-MediumItalic.ttf");
 }
 @font-face {
-    font-family: heading;
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src: url("./fonts/IBMPlexMono-Italic.ttf");
-}
-
-@font-face {
-    font-family: body;
-    font-style: normal;
-    font-display: swap;
-    src: url("./fonts/Inter-VariableFont_opsz,wght.ttf");
-}
-@font-face {
-    font-family: body;
-    font-style: italic;
-    font-display: swap;
-    src: url("./fonts/Inter-Italic-VariableFont_opsz,wght.ttf");
+	font-family: heading;
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url("./fonts/IBMPlexMono-Italic.ttf");
 }
 
 @font-face {
-    font-family: code;
-    font-style: normal;
-    font-display: swap;
-    src: url("./fonts/JetBrainsMono-VariableFont_wght.ttf");
+	font-family: body;
+	font-style: normal;
+	font-display: swap;
+	src: url("./fonts/Inter-VariableFont_opsz,wght.ttf");
 }
 @font-face {
-    font-family: code;
-    font-style: italic;
-    font-display: swap;
-    src: url("./fonts/JetBrainsMono-Italic-VariableFont_wght.ttf");
+	font-family: body;
+	font-style: italic;
+	font-display: swap;
+	src: url("./fonts/Inter-Italic-VariableFont_opsz,wght.ttf");
+}
+
+@font-face {
+	font-family: code;
+	font-style: normal;
+	font-display: swap;
+	src: url("./fonts/JetBrainsMono-VariableFont_wght.ttf");
+}
+@font-face {
+	font-family: code;
+	font-style: italic;
+	font-display: swap;
+	src: url("./fonts/JetBrainsMono-Italic-VariableFont_wght.ttf");
 }

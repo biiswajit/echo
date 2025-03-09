@@ -1,5 +1,4 @@
 services:
-
   postgres:
     image: postgres:latest
     container_name: "echo_postgres"

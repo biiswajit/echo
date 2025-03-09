@@ -1,36 +1,36 @@
 {
-  "name": "@echo/ui",
-  "version": "0.0.0",
-  "private": true,
-  "exports": {
-    ".": {
-      "types": "./src/index.tsx",
-      "default": "./dist/index.js"
-    }
-  },
-  "scripts": {
-    "build": "tsc --build",
-    "linter:lint": "eslint . --max-warnings 0",
-    "linter:fix": "eslint --fix",
-    "generate:component": "turbo gen react-component",
-    "check-types": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@echo/eslint-config": "workspace:*",
-    "@echo/typescript-config": "workspace:*",
-    "@echo/tailwind-config": "workspace:*",
-    "@turbo/gen": "^2.4.4",
-    "@types/node": "^22.13.9",
-    "@types/react": "19.0.10",
-    "@types/react-dom": "19.0.4",
-    "eslint": "^9.21.0",
-    "typescript": "5.8.2"
-  },
-  "dependencies": {
-    "@tailwindcss/postcss": "^4.0.12",
-    "postcss": "^8.5.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.12"
-  }
+	"name": "@echo/ui",
+	"version": "0.0.0",
+	"private": true,
+	"exports": {
+		".": {
+			"types": "./src/index.tsx",
+			"default": "./dist/index.js"
+		}
+	},
+	"scripts": {
+		"build": "tsc --build",
+		"linter:lint": "eslint . --max-warnings 0",
+		"linter:fix": "eslint --fix",
+		"generate:component": "turbo gen react-component",
+		"check-types": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@echo/eslint-config": "workspace:*",
+		"@echo/typescript-config": "workspace:*",
+		"@echo/tailwind-config": "workspace:*",
+		"@turbo/gen": "^2.4.4",
+		"@types/node": "^22.13.9",
+		"@types/react": "19.0.10",
+		"@types/react-dom": "19.0.4",
+		"eslint": "^9.21.0",
+		"typescript": "5.8.2"
+	},
+	"dependencies": {
+		"@tailwindcss/postcss": "^4.0.12",
+		"postcss": "^8.5.3",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"tailwindcss": "^4.0.12"
+	}
 }

@@ -1,35 +1,35 @@
 {
-  "name": "@echo/models",
-  "version": "0.0.0",
-  "description": "",
-  "main": "./dist/models.js",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./src/models.ts",
-      "default": "./dist/models.js"
-    }
-  },
-  "scripts": {
-    "clean": "rm -rf ./dist && tsc --build --clean",
-    "build": "tsc --build",
-    "linter:lint": "eslint --max-warnings 0",
-    "linter:fix": "eslint --fix"
-  },
-  "devDependencies": {
-    "@echo/abstracts": "workspace:*",
-    "@echo/natives": "workspace:*",
-    "@echo/typescript-config": "workspace:*",
-    "@echo/prompts": "workspace:*",
-    "@echo/functions": "workspace:*",
-    "@echo/eslint-config": "workspace:*",
-    "@types/node": "^22.13.9",
-    "typescript": "^5.8.2"
-  },
-  "dependencies": {
-    "@google/generative-ai": "^0.23.0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "@echo/models",
+	"version": "0.0.0",
+	"description": "",
+	"main": "./dist/models.js",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./src/models.ts",
+			"default": "./dist/models.js"
+		}
+	},
+	"scripts": {
+		"clean": "rm -rf ./dist && tsc --build --clean",
+		"build": "tsc --build",
+		"linter:lint": "eslint --max-warnings 0",
+		"linter:fix": "eslint --fix"
+	},
+	"devDependencies": {
+		"@echo/abstracts": "workspace:*",
+		"@echo/natives": "workspace:*",
+		"@echo/typescript-config": "workspace:*",
+		"@echo/prompts": "workspace:*",
+		"@echo/functions": "workspace:*",
+		"@echo/eslint-config": "workspace:*",
+		"@types/node": "^22.13.9",
+		"typescript": "^5.8.2"
+	},
+	"dependencies": {
+		"@google/generative-ai": "^0.23.0"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
 }
