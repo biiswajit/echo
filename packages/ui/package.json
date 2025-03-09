@@ -3,9 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./*": "./src/*.tsx"
+    ".": {
+      "types": "./src/index.tsx",
+      "default": "./dist/index.js"
+    }
   },
   "scripts": {
+    "build": "tsc --build",
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit"

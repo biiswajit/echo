@@ -1,2 +1,2 @@
-@import "tailwindcss";
-@import "../node_modules/@echo/tailwind-config/colors.css";
+@import "../node_modules/@echo/tailwind-config/styles.css";
+@source "./**/*.{jsx,tsx,mdx,js,ts}";

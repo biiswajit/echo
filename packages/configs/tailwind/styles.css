@@ -1,0 +1,10 @@
+@import "./colors.css";
+@import "./fonts.css";
+@source "./";
+
+@theme {
+    /* Custom fonts */
+    --font-heading: "heading";
+    --font-body: "body";
+    --font-code: "code";
+}
