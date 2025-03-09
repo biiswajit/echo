@@ -20,3 +20,37 @@ and start contributing to the repository.
 ## Setup guide
 
 For local setup follow this [setup guide](./SETUP.md)
+
+## Before commit
+
+### Check code formatting
+
+This project uses prettier to maintain code formatting throughout the project, you can check the [rules](.prettierrc). Before making any commit to this codebase make sure you run
+
+```sh
+    pnpm prettier:check
+```
+
+to check whether your edited files have right formatting or not. If there is any formatting issue then run
+
+```sh
+    pnpm prettier:format
+```
+
+command to reformat the file.
+
+### Check code linting
+
+This project uses eslint for code linting. Please make sure to run
+
+```sh
+    pnpm formatter:lint
+```
+
+to check for any linting issue. If there is some issue with code linting then run
+
+```sh
+    pnpm formatter:fix
+```
+
+to auto fix those issues.
