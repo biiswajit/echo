@@ -18,8 +18,8 @@
 		"db:deploy": "prisma migrate deploy",
 		"db:reset": "prisma migrate reset --schema ./schema",
 		"check-types": "tsc --noEmit",
-		"linter:lint": "eslint --max-warnings 0",
-		"linter:fix": "eslint --fix"
+		"eslint:lint": "eslint --max-warnings 0",
+		"eslint:fix": "eslint --fix"
 	},
 	"devDependencies": {
 		"@echo/typescript-config": "workspace:*",

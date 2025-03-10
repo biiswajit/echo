@@ -8,8 +8,8 @@
 			"outputs": [".next/**", "!.next/cache/**", "dist/**"],
 			"env": ["GEMINI_API_KEY", "NODE_ENV"]
 		},
-		"linter:lint": { "dependsOn": ["^linter:lint"] },
-		"linter:fix": { "dependsOn": ["^linter:fix"] },
+		"eslint:lint": { "dependsOn": ["^eslint:lint"] },
+		"eslint:fix": { "dependsOn": ["^eslint:fix"] },
 		"check-types": { "dependsOn": ["^check-types"] },
 		"dev": { "cache": false, "persistent": true }
 	}

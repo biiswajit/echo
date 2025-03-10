@@ -13,8 +13,8 @@
 	"scripts": {
 		"clean": "rm -rf ./dist && tsc --build --clean",
 		"build": "tsc --build",
-		"linter:lint": "eslint --max-warnings 0",
-		"linter:fix": "eslint --fix"
+		"eslint:lint": "eslint --max-warnings 0",
+		"eslint:fix": "eslint --fix"
 	},
 	"devDependencies": {
 		"@echo/abstracts": "workspace:*",

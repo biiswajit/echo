@@ -1,4 +1,4 @@
 @import "tailwindcss";
-@import "../node_modules/@echo/tailwind-config/styles.css";
+@import "../../../packages/configs/tailwind/styles.css";
 @source "../app/**/*.{jsx,tsx,js,ts,mdx}";
 @source "../../../packages/ui/**/*.{jsx,tsx,mdx,js,ts}";
