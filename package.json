@@ -1,25 +1,25 @@
 {
-	"name": "echo",
-	"private": true,
-	"scripts": {
-		"clean": "turbo run clean",
-		"build": "turbo run build",
-		"dev": "turbo run dev",
-		"eslint:lint": "turbo run eslint:lint",
-		"eslint:fix": "turbo run eslint:fix",
-		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
-		"check-types": "turbo run check-types",
-		"db:migrate": "pnpm --filter @echo/database db:migrate",
-		"prettier:format": "pnpm prettier . --write",
-		"prettier:check": "pnpm prettier . --check"
-	},
-	"devDependencies": {
-		"prettier": "^3.5.3",
-		"turbo": "^2.4.4",
-		"typescript": "5.8.2"
-	},
-	"packageManager": "pnpm@9.0.0",
-	"engines": {
-		"node": ">=18"
-	}
+  "name": "echo",
+  "private": true,
+  "scripts": {
+    "clean": "turbo run clean",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "eslint:lint": "turbo run eslint:lint",
+    "eslint:fix": "turbo run eslint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types",
+    "db:migrate": "pnpm --filter @echo/database db:migrate",
+    "prettier:format": "pnpm prettier . --write",
+    "prettier:check": "pnpm prettier . --check"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "turbo": "^2.4.4",
+    "typescript": "5.8.2"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  }
 }

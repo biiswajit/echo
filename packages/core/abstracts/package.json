@@ -1,32 +1,32 @@
 {
-	"name": "@echo/abstracts",
-	"version": "0.0.0",
-	"description": "",
-	"main": "./dist/abstracts.js",
-	"type": "module",
-	"exports": {
-		".": {
-			"types": "./src/abstracts.ts",
-			"default": "./dist/abstracts.js"
-		}
-	},
-	"scripts": {
-		"clean": "rm -rf ./dist && tsc --build --clean",
-		"build": "tsc --build",
-		"eslint:lint": "eslint --max-warnings 0",
-		"eslint:fix": "eslint --fix"
-	},
-	"devDependencies": {
-		"@echo/typescript-config": "workspace:*",
-		"@echo/natives": "workspace:*",
-		"@echo/eslint-config": "workspace:*",
-		"@types/node": "^22.13.9",
-		"typescript": "^5.8.2"
-	},
-	"dependencies": {
-		"redis": "^4.7.0"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC"
+  "name": "@echo/abstracts",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./dist/abstracts.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/abstracts.ts",
+      "default": "./dist/abstracts.js"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist && tsc --build --clean",
+    "build": "tsc --build",
+    "eslint:lint": "eslint --max-warnings 0",
+    "eslint:fix": "eslint --fix"
+  },
+  "devDependencies": {
+    "@echo/typescript-config": "workspace:*",
+    "@echo/natives": "workspace:*",
+    "@echo/eslint-config": "workspace:*",
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "redis": "^4.7.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

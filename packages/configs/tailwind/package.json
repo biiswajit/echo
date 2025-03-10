@@ -1,16 +1,16 @@
 {
-	"name": "@echo/tailwind-config",
-	"version": "0.0.0",
-	"description": "tailwind brand configurations",
-	"keywords": [
-		"tailwind",
-		"ui",
-		"design",
-		"front-end"
-	],
-	"author": "Biwajit Malakar <mebiswajitmalakar@gmail.com>",
-	"license": "ISC",
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@echo/tailwind-config",
+  "version": "0.0.0",
+  "description": "tailwind brand configurations",
+  "keywords": [
+    "tailwind",
+    "ui",
+    "design",
+    "front-end"
+  ],
+  "author": "Biwajit Malakar <mebiswajitmalakar@gmail.com>",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  }
 }

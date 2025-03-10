@@ -1,28 +1,28 @@
 {
-	"name": "@echo/prompts",
-	"version": "0.0.0",
-	"description": "",
-	"main": "./dist/prompts.js",
-	"type": "module",
-	"exports": {
-		".": {
-			"types": "./src/prompts.ts",
-			"default": "./dist/prompts.js"
-		}
-	},
-	"scripts": {
-		"clean": "rm -rf ./dist && tsc --build --clean",
-		"build": "tsc --build",
-		"eslint:lint": "eslint --max-warnings 0",
-		"eslint:fix": "eslint --fix"
-	},
-	"devDependencies": {
-		"@echo/typescript-config": "workspace:*",
-		"@echo/eslint-config": "workspace:*",
-		"@types/node": "^22.13.9",
-		"typescript": "^5.8.2"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC"
+  "name": "@echo/prompts",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./dist/prompts.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/prompts.ts",
+      "default": "./dist/prompts.js"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist && tsc --build --clean",
+    "build": "tsc --build",
+    "eslint:lint": "eslint --max-warnings 0",
+    "eslint:fix": "eslint --fix"
+  },
+  "devDependencies": {
+    "@echo/typescript-config": "workspace:*",
+    "@echo/eslint-config": "workspace:*",
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

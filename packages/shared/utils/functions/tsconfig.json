@@ -1,6 +1,6 @@
 {
-	"extends": "@echo/typescript-config/base.json",
-	"compilerOptions": { "rootDir": "src", "outDir": "dist", "incremental": false },
-	"include": ["src"],
-	"exclude": ["node_modules", "dist"]
+  "extends": "@echo/typescript-config/base.json",
+  "compilerOptions": { "rootDir": "src", "outDir": "dist", "incremental": false },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

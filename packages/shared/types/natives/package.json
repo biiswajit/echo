@@ -1,29 +1,29 @@
 {
-	"name": "@echo/natives",
-	"version": "0.0.0",
-	"description": "",
-	"main": "./dist/natives.js",
-	"type": "module",
-	"exports": {
-		".": {
-			"types": "./src/natives.ts",
-			"default": "./dist/natives.js"
-		}
-	},
-	"scripts": {
-		"clean": "rm -rf ./dist && tsc --build --clean",
-		"build": "tsc --build",
-		"eslint:lint": "eslint --max-warnings 0",
-		"eslint:fix": "eslint --fix"
-	},
-	"devDependencies": {
-		"@echo/typescript-config": "workspace:*",
-		"@echo/database": "workspace:*",
-		"@echo/eslint-config": "workspace:*",
-		"@types/node": "^22.13.9",
-		"typescript": "^5.8.2"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC"
+  "name": "@echo/natives",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./dist/natives.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/natives.ts",
+      "default": "./dist/natives.js"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist && tsc --build --clean",
+    "build": "tsc --build",
+    "eslint:lint": "eslint --max-warnings 0",
+    "eslint:fix": "eslint --fix"
+  },
+  "devDependencies": {
+    "@echo/typescript-config": "workspace:*",
+    "@echo/database": "workspace:*",
+    "@echo/eslint-config": "workspace:*",
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

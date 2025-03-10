@@ -1,5 +1,5 @@
 export function inlineEditor(selectedText: string, prompt: string): string {
-	return `
+  return `
     You are assisting the user in refining or expanding a specific part of a previous response.
     The user has selected the following text:
     <user_selected_text>

@@ -1,12 +1,12 @@
 @theme {
-	/* Blue color */
-	--color-echo-blue-lighter: #7c81ff;
-	--color-echo-blue-primary: #635bff;
-	--color-echo-blue-darker: #3a359e;
-	/* Black color */
-	--color-echo-black-ligher: #05192d;
-	--color-echo-black-primary: #020d1b;
-	--color-echo-black-darker: #000205;
-	/* White color */
-	--color-echo-white: #f6f9fc;
+  /* Blue color */
+  --color-echo-blue-lighter: #7c81ff;
+  --color-echo-blue-primary: #635bff;
+  --color-echo-blue-darker: #3a359e;
+  /* Black color */
+  --color-echo-black-ligher: #05192d;
+  --color-echo-black-primary: #020d1b;
+  --color-echo-black-darker: #000205;
+  /* White color */
+  --color-echo-white: #f6f9fc;
 }

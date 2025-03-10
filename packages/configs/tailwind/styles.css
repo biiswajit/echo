@@ -2,8 +2,8 @@
 @import "./fonts.css";
 
 @theme {
-	/* Custom fonts */
-	--font-heading: "heading";
-	--font-body: "body";
-	--font-code: "code";
+  /* Custom fonts */
+  --font-heading: "heading";
+  --font-body: "body";
+  --font-code: "code";
 }

@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../button"; // Adjust the import path based on your project structure
 
 const meta: Meta<typeof Button> = {
-	title: "Components/Button",
-	component: Button,
-	argTypes: { onClick: { action: "clicked" } },
+  title: "Components/Button",
+  component: Button,
+  argTypes: { onClick: { action: "clicked" } },
 };
 
 export default meta;
